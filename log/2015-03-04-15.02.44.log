@@ -1,0 +1,199 @@
+getAllFieldsForSObject.cls
+
+================================
+
+//for the Account object, you can replact that with any object you have, standard or custom
+Schema.DescribeSObjectResult a_desc = Opportunity.sObjectType.getDescribe(); 
+Map<String, Schema.SObjectField> a_fields = a_desc.fields.getMap();
+
+for(Schema.sObjectField fld:a_fields.values()){ 
+     System.debug(fld);
+}
+
+
+================================
+
+31.0 APEX_CODE,DEBUG;APEX_PROFILING,DEBUG;CALLOUT,INFO;DB,INFO;VALIDATION,INFO;WORKFLOW,INFO
+Execute Anonymous: //for the Account object, you can replact that with any object you have, standard or custom
+Execute Anonymous: Schema.DescribeSObjectResult a_desc = Opportunity.sObjectType.getDescribe(); 
+Execute Anonymous: Map<String, Schema.SObjectField> a_fields = a_desc.fields.getMap();
+Execute Anonymous: 
+Execute Anonymous: for(Schema.sObjectField fld:a_fields.values()){ 
+Execute Anonymous:      System.debug(fld);
+Execute Anonymous: }
+13:02:44.038 (38362395)|EXECUTION_STARTED
+13:02:44.038 (38375126)|CODE_UNIT_STARTED|[EXTERNAL]|execute_anonymous_apex
+13:02:44.041 (41344302)|USER_DEBUG|[6]|DEBUG|Source__c
+13:02:44.041 (41404715)|USER_DEBUG|[6]|DEBUG|FiscalQuarter
+13:02:44.041 (41458524)|USER_DEBUG|[6]|DEBUG|Settlement_Date__c
+13:02:44.041 (41516088)|USER_DEBUG|[6]|DEBUG|Funds_Arrival_Date__c
+13:02:44.041 (41566731)|USER_DEBUG|[6]|DEBUG|LeadSource
+13:02:44.041 (41617332)|USER_DEBUG|[6]|DEBUG|User_Confirmation_Code__c
+13:02:44.041 (41678831)|USER_DEBUG|[6]|DEBUG|Recurring_Gift__c
+13:02:44.041 (41731701)|USER_DEBUG|[6]|DEBUG|Confirmation_Code__c
+13:02:44.041 (41781459)|USER_DEBUG|[6]|DEBUG|CreatedById
+13:02:44.041 (41831215)|USER_DEBUG|[6]|DEBUG|Matching_Gift_Org_Name__c
+13:02:44.041 (41880730)|USER_DEBUG|[6]|DEBUG|Grant_Process__c
+13:02:44.041 (41930104)|USER_DEBUG|[6]|DEBUG|Benefit_Value__c
+13:02:44.041 (41978898)|USER_DEBUG|[6]|DEBUG|Revision_ID__c
+13:02:44.042 (42028015)|USER_DEBUG|[6]|DEBUG|Receipted__c
+13:02:44.042 (42077813)|USER_DEBUG|[6]|DEBUG|IsDeleted
+13:02:44.042 (42136762)|USER_DEBUG|[6]|DEBUG|Primary_Engagement_Channel__c
+13:02:44.042 (42188406)|USER_DEBUG|[6]|DEBUG|RecordTypeId
+13:02:44.042 (42238056)|USER_DEBUG|[6]|DEBUG|Participation_Type__c
+13:02:44.042 (42287384)|USER_DEBUG|[6]|DEBUG|SystemModstamp
+13:02:44.042 (42336875)|USER_DEBUG|[6]|DEBUG|Campaign_Name__c
+13:02:44.042 (42394062)|USER_DEBUG|[6]|DEBUG|Matching_Organization__c
+13:02:44.042 (42445510)|USER_DEBUG|[6]|DEBUG|Check_Date__c
+13:02:44.042 (42500371)|USER_DEBUG|[6]|DEBUG|Sub_Source__c
+13:02:44.042 (42550481)|USER_DEBUG|[6]|DEBUG|Billing_Street__c
+13:02:44.042 (42599906)|USER_DEBUG|[6]|DEBUG|ExternalId__c
+13:02:44.042 (42649472)|USER_DEBUG|[6]|DEBUG|Settlement_Amount__c
+13:02:44.042 (42698572)|USER_DEBUG|[6]|DEBUG|Card_Number__c
+13:02:44.042 (42747740)|USER_DEBUG|[6]|DEBUG|CloseDate
+13:02:44.042 (42796590)|USER_DEBUG|[6]|DEBUG|CreatedDate
+13:02:44.042 (42844915)|USER_DEBUG|[6]|DEBUG|OwnerId
+13:02:44.042 (42894064)|USER_DEBUG|[6]|DEBUG|Form_ID__c
+13:02:44.042 (42943361)|USER_DEBUG|[6]|DEBUG|Honor_Memorial_Notification_Date__c
+13:02:44.043 (43000244)|USER_DEBUG|[6]|DEBUG|Matching_Gift_Link__c
+13:02:44.043 (43051558)|USER_DEBUG|[6]|DEBUG|LastViewedDate
+13:02:44.043 (43101218)|USER_DEBUG|[6]|DEBUG|Receipt_ID__c
+13:02:44.043 (43150983)|USER_DEBUG|[6]|DEBUG|Honor_Memorial_Notification_Method__c
+13:02:44.043 (43209943)|USER_DEBUG|[6]|DEBUG|Pledge__c
+13:02:44.043 (43270511)|USER_DEBUG|[6]|DEBUG|TeamRaiser_Registration__c
+13:02:44.043 (43319177)|USER_DEBUG|[6]|DEBUG|FiscalYear
+13:02:44.043 (43367831)|USER_DEBUG|[6]|DEBUG|LastModifiedById
+13:02:44.043 (43417497)|USER_DEBUG|[6]|DEBUG|Grant_Agreement_Submitted_Date__c
+13:02:44.043 (43471182)|USER_DEBUG|[6]|DEBUG|Payment_Type__c
+13:02:44.043 (43522311)|USER_DEBUG|[6]|DEBUG|Reversed__c
+13:02:44.043 (43571517)|USER_DEBUG|[6]|DEBUG|Intend_to_Reapply__c
+13:02:44.043 (43621179)|USER_DEBUG|[6]|DEBUG|Amount_Requested__c
+13:02:44.043 (43670714)|USER_DEBUG|[6]|DEBUG|Acknowledged__c
+13:02:44.043 (43720578)|USER_DEBUG|[6]|DEBUG|Reference_Number_Full__c
+13:02:44.043 (43769985)|USER_DEBUG|[6]|DEBUG|Discount_Amount__c
+13:02:44.043 (43819226)|USER_DEBUG|[6]|DEBUG|Recognition__c
+13:02:44.043 (43868414)|USER_DEBUG|[6]|DEBUG|Honor_Memorial_Type__c
+13:02:44.043 (43917550)|USER_DEBUG|[6]|DEBUG|Bank_Name__c
+13:02:44.043 (43966436)|USER_DEBUG|[6]|DEBUG|Unprocessed_Data__c
+13:02:44.044 (44015873)|USER_DEBUG|[6]|DEBUG|Refund_Processed__c
+13:02:44.044 (44075693)|USER_DEBUG|[6]|DEBUG|Batch__c
+13:02:44.044 (44136136)|USER_DEBUG|[6]|DEBUG|Pricebook2Id
+13:02:44.044 (44188715)|USER_DEBUG|[6]|DEBUG|Refund_Date__c
+13:02:44.044 (44238053)|USER_DEBUG|[6]|DEBUG|Probability
+13:02:44.044 (44296504)|USER_DEBUG|[6]|DEBUG|Tribute__c
+13:02:44.044 (44347921)|USER_DEBUG|[6]|DEBUG|Billing_Country__c
+13:02:44.044 (44397797)|USER_DEBUG|[6]|DEBUG|DonationSeriesDescribe__c
+13:02:44.044 (44447658)|USER_DEBUG|[6]|DEBUG|Matching_Close_Date__c
+13:02:44.044 (44501982)|USER_DEBUG|[6]|DEBUG|ACH_Routing_Number__c
+13:02:44.044 (44551481)|USER_DEBUG|[6]|DEBUG|Reason_Declined__c
+13:02:44.044 (44600445)|USER_DEBUG|[6]|DEBUG|TotalOpportunityQuantity
+13:02:44.044 (44650324)|USER_DEBUG|[6]|DEBUG|Honor_Memorial_Person_to_Notify__c
+13:02:44.044 (44700179)|USER_DEBUG|[6]|DEBUG|eCRM_Gift_Origin__c
+13:02:44.044 (44749699)|USER_DEBUG|[6]|DEBUG|Pledge_Payment_Index__c
+13:02:44.044 (44799193)|USER_DEBUG|[6]|DEBUG|DonationRecurrenceId__c
+13:02:44.044 (44848386)|USER_DEBUG|[6]|DEBUG|Check_Number_Text__c
+13:02:44.044 (44897495)|USER_DEBUG|[6]|DEBUG|StageName
+13:02:44.044 (44946722)|USER_DEBUG|[6]|DEBUG|Transaction_ID__c
+13:02:44.044 (44996567)|USER_DEBUG|[6]|DEBUG|Grant_Term__c
+13:02:44.045 (45055672)|USER_DEBUG|[6]|DEBUG|Online_Form__c
+13:02:44.045 (45108298)|USER_DEBUG|[6]|DEBUG|Tax_Deductible_Amount__c
+13:02:44.045 (45157831)|USER_DEBUG|[6]|DEBUG|Acknowledged_Date__c
+13:02:44.045 (45207194)|USER_DEBUG|[6]|DEBUG|Check_Number__c
+13:02:44.045 (45253583)|USER_DEBUG|[6]|DEBUG|Fiscal
+13:02:44.045 (45301282)|USER_DEBUG|[6]|DEBUG|Type
+13:02:44.045 (45349964)|USER_DEBUG|[6]|DEBUG|LastActivityDate
+13:02:44.045 (45399853)|USER_DEBUG|[6]|DEBUG|Form_Name__c
+13:02:44.045 (45449130)|USER_DEBUG|[6]|DEBUG|LOI_Approved__c
+13:02:44.045 (45503006)|USER_DEBUG|[6]|DEBUG|LOI_Submitted_Date__c
+13:02:44.045 (45552177)|USER_DEBUG|[6]|DEBUG|Amount
+13:02:44.045 (45601504)|USER_DEBUG|[6]|DEBUG|LOI_Approved_Declined_Date__c
+13:02:44.045 (45650885)|USER_DEBUG|[6]|DEBUG|Description
+13:02:44.045 (45699997)|USER_DEBUG|[6]|DEBUG|Grant_Agreement_Received_Date__c
+13:02:44.045 (45749363)|USER_DEBUG|[6]|DEBUG|Grant_Website__c
+13:02:44.045 (45798586)|USER_DEBUG|[6]|DEBUG|Honor_Memorial_Notification_Email__c
+13:02:44.045 (45857872)|USER_DEBUG|[6]|DEBUG|Batch_Entry__c
+13:02:44.045 (45909496)|USER_DEBUG|[6]|DEBUG|Proposal_Submitted_Date__c
+13:02:44.045 (45959523)|USER_DEBUG|[6]|DEBUG|Donation_Record_ID__c
+13:02:44.046 (46009176)|USER_DEBUG|[6]|DEBUG|External_Revision__c
+13:02:44.046 (46059849)|USER_DEBUG|[6]|DEBUG|Contribution_Method__c
+13:02:44.046 (46118200)|USER_DEBUG|[6]|DEBUG|TeamRaiser_Team__c
+13:02:44.046 (46169512)|USER_DEBUG|[6]|DEBUG|Billing_Postal_Code__c
+13:02:44.046 (46228065)|USER_DEBUG|[6]|DEBUG|Donation_Document_Acknowledgment__c
+13:02:44.046 (46282621)|USER_DEBUG|[6]|DEBUG|Transaction_Type__c
+13:02:44.046 (46333186)|USER_DEBUG|[6]|DEBUG|ACH_Account_Number__c
+13:02:44.046 (46382376)|USER_DEBUG|[6]|DEBUG|Write_In_Designation__c
+13:02:44.046 (46431400)|USER_DEBUG|[6]|DEBUG|Card_Expiration_Date__c
+13:02:44.046 (46484717)|USER_DEBUG|[6]|DEBUG|Online_Message_Body__c
+13:02:44.046 (46561109)|USER_DEBUG|[6]|DEBUG|Matching_Amount__c
+13:02:44.046 (46616751)|USER_DEBUG|[6]|DEBUG|Merchant_Account_ID__c
+13:02:44.046 (46666681)|USER_DEBUG|[6]|DEBUG|Settlement_Batch__c
+13:02:44.046 (46723017)|USER_DEBUG|[6]|DEBUG|CampaignId
+13:02:44.046 (46783810)|USER_DEBUG|[6]|DEBUG|Donation_Document_Receipt__c
+13:02:44.046 (46835775)|USER_DEBUG|[6]|DEBUG|IsClosed
+13:02:44.046 (46886134)|USER_DEBUG|[6]|DEBUG|Honor_Memorial_Honoree_Name__c
+13:02:44.046 (46945235)|USER_DEBUG|[6]|DEBUG|Effort_Segment__c
+13:02:44.046 (46996799)|USER_DEBUG|[6]|DEBUG|Proposal_Approved_Declined_Date__c
+13:02:44.047 (47046976)|USER_DEBUG|[6]|DEBUG|Posted__c
+13:02:44.047 (47097500)|USER_DEBUG|[6]|DEBUG|Matching_Gift_Amount_Service__c
+13:02:44.047 (47146820)|USER_DEBUG|[6]|DEBUG|ExpectedRevenue
+13:02:44.047 (47195531)|USER_DEBUG|[6]|DEBUG|NextStep
+13:02:44.047 (47245181)|USER_DEBUG|[6]|DEBUG|Billing_City__c
+13:02:44.047 (47294472)|USER_DEBUG|[6]|DEBUG|HasOpportunityLineItem
+13:02:44.047 (47343984)|USER_DEBUG|[6]|DEBUG|Matching_Gift_Org_Verified__c
+13:02:44.047 (47393886)|USER_DEBUG|[6]|DEBUG|Merchant_Account__c
+13:02:44.047 (47443205)|USER_DEBUG|[6]|DEBUG|LastModifiedDate
+13:02:44.047 (47497878)|USER_DEBUG|[6]|DEBUG|Close_Amount__c
+13:02:44.047 (47547394)|USER_DEBUG|[6]|DEBUG|Id
+13:02:44.047 (47597064)|USER_DEBUG|[6]|DEBUG|Billing_State__c
+13:02:44.047 (47646413)|USER_DEBUG|[6]|DEBUG|Pledge_Installment_Frequency__c
+13:02:44.047 (47695935)|USER_DEBUG|[6]|DEBUG|Receipt_Date__c
+13:02:44.047 (47745144)|USER_DEBUG|[6]|DEBUG|Credit_Card_Type__c
+13:02:44.047 (47794295)|USER_DEBUG|[6]|DEBUG|Grant_Term_End_Date__c
+13:02:44.047 (47843124)|USER_DEBUG|[6]|DEBUG|LastReferencedDate
+13:02:44.047 (47891846)|USER_DEBUG|[6]|DEBUG|Joint_Recognition__c
+13:02:44.047 (47940403)|USER_DEBUG|[6]|DEBUG|Name
+13:02:44.047 (47990204)|USER_DEBUG|[6]|DEBUG|Is_Matching__c
+13:02:44.048 (48039671)|USER_DEBUG|[6]|DEBUG|Anonymous__c
+13:02:44.048 (48090197)|USER_DEBUG|[6]|DEBUG|Grant_Reporting_Website__c
+13:02:44.048 (48145772)|USER_DEBUG|[6]|DEBUG|AccountId
+13:02:44.048 (48195322)|USER_DEBUG|[6]|DEBUG|ForecastCategory
+13:02:44.048 (48252054)|USER_DEBUG|[6]|DEBUG|Contact__c
+13:02:44.048 (48303312)|USER_DEBUG|[6]|DEBUG|ForecastCategoryName
+13:02:44.048 (48353314)|USER_DEBUG|[6]|DEBUG|Grant_Term_Start_Date__c
+13:02:44.048 (48403125)|USER_DEBUG|[6]|DEBUG|Honor_Memorial_Notification_Email_Txt__c
+13:02:44.048 (48452857)|USER_DEBUG|[6]|DEBUG|Personal_Page__c
+13:02:44.048 (48507188)|USER_DEBUG|[6]|DEBUG|ReferenceNumber__c
+13:02:44.048 (48556973)|USER_DEBUG|[6]|DEBUG|Proposal_Deadline__c
+13:02:44.048 (48606257)|USER_DEBUG|[6]|DEBUG|Posted_Date__c
+13:02:44.048 (48655468)|USER_DEBUG|[6]|DEBUG|Grant_Reporting_Frequency__c
+13:02:44.048 (48704961)|USER_DEBUG|[6]|DEBUG|Honor_Memorial_Message__c
+13:02:44.048 (48754388)|USER_DEBUG|[6]|DEBUG|Matching_Status__c
+13:02:44.048 (48803866)|USER_DEBUG|[6]|DEBUG|Segment_Code__c
+13:02:44.048 (48852820)|USER_DEBUG|[6]|DEBUG|IsWon
+13:02:44.048 (48902556)|USER_DEBUG|[6]|DEBUG|Do_Not_Assign_Default_Designation__c
+13:02:44.048 (48952142)|USER_DEBUG|[6]|DEBUG|Matching_Percent__c
+13:02:44.049 (49001349)|USER_DEBUG|[6]|DEBUG|Receipt_Amount__c
+13:02:44.049 (49051532)|USER_DEBUG|[6]|DEBUG|IsPrivate
+13:02:44.049 (49101281)|USER_DEBUG|[6]|DEBUG|Honor_Memorial_Notification_Address__c
+13:02:44.049 (49160951)|USER_DEBUG|[6]|DEBUG|Segment__c
+13:02:44.049 (49212497)|USER_DEBUG|[6]|DEBUG|Matching_Gift_Form_URL__c
+13:02:44.049 (49271718)|USER_DEBUG|[6]|DEBUG|Fulfillment_Pledge__c
+13:02:44.790 (49324917)|CUMULATIVE_LIMIT_USAGE
+13:02:44.790|LIMIT_USAGE_FOR_NS|(default)|
+  Number of SOQL queries: 0 out of 100
+  Number of query rows: 0 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 0 out of 150
+  Number of DML rows: 0 out of 10000
+  Maximum CPU time: 0 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+13:02:44.790|CUMULATIVE_LIMIT_USAGE_END
+
+13:02:44.049 (49367884)|CODE_UNIT_FINISHED|execute_anonymous_apex
+13:02:44.050 (50397100)|EXECUTION_FINISHED

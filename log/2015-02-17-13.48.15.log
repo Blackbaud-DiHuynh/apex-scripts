@@ -1,0 +1,183 @@
+Execute Anonymous
+
+================================
+
+String pledgeHTML = '<label for="searchOwner_sidebar">Limit to items I own </label>'
++'<label for="Name"><span class="requiredMark">*</span>Pledge Name</label>'
++'<label for="00Nj0000002D7T1"><span class="requiredMark">*</span>Donation Type</label>'
++'<label for="CF00Nj0000002D7SJ"><span class="requiredMark">*</span>Account</label>'
++'<label for="00Nj0000002D7Sz">Transaction Type</label>'
++'<label for="CF00Nj0000002D7SO"><span class="requiredMark">*</span>Donor</label>'
++'<label for="00Nj0000002D7Sx"><span class="requiredMark">*</span>Start Date</label>'
++'<label for="00Nj0000002D7Sd">Original Pledge Amount</label>'
++'<label for="00Nj0000002D7Sl">Pledge Status</label>'
++'<label for="CF00Nj0000002D7T0">Tribute</label>'
++'<label for="00Nj0000002D7Si"><span class="requiredMark">*</span>Pledge Amount</label>'
++'<label for="CF00Nj0000002D7Sf">Parent Donation</label>'
++'<label for="00Nj0000002D7SM">Benefit Value</label>'
++'<label for="00Nj0000002D7Sn">Posted</label>'
++'<label for="00Nj0000002D7Sc"><span class="requiredMark">*</span>Number of Payments</label>'
++'<label for="00Nj0000002D7Sm">Posted Date</label>'
++'<label for="CF00Nj0000002D7SN"><span class="requiredMark">*</span>Campaign ID</label>'
++'<label for="00Nj0000002D7Sw">Reversed</label>'
++'<label for="CF00Nj0000002D7So">Primary Classification</label>'
++'<label for="00Nj0000002D7SQ">Description</label>'
++'<label for="00Nj0000002D7Xv">Payment Type</label>'
++'<label for="00Nj0000002D7Xo">Credit Card Type</label>'
++'<label for="00Nj0000002D7Xz">Last Payment Date</label>'
++'<label for="00Nj0000002D7Xr">Last Payment Amount</label>'
++'<label for="00Nj0000002D7Sb">Convio Luminate Online Next Payment Date</label>'
++'<label for="00Nj0000002D7Xt">Next Payment Amount</label>'
++'<label for="00Nj0000002D7Xs">Last Payment Status</label>'
++'<label for="00Nj0000002D7T3">Convio Luminate Online Gift Origin</label>'
++'<label for="00Nj0000002D7Sh">Payments Received</label>'
++'<label for="00Nj0000002D7SL">Amount Received</label>'
++'<label for="00Nj0000002D7T2">Write-In Designation</label>'
++'<label for="00Nj0000002D7Sa">Honor/Memorial Type</label>'
++'<label for="00Nj0000002D7ST">Honoree Name</label>'
++'<label for="00Nj0000002D7SY">Honor/Memorial Notification Method</label>'
++'<label for="00Nj0000002D7SZ">Honor/Memorial Person(s) to Notify</label>'
++'<label for="00Nj0000002D7SV">Honor/Memorial Notification Address</label>'
++'<label for="00Nj0000002D7SX">Honor/Memorial Notification Email</label>'
++'<label for="00Nj0000002D7SW">Honor/Memorial Notification Date</label>'
++'<label for="00Nj0000002D7SU">Honor/Memorial Message</label>';
+
+
+UrlBuilder url = new UrlBuilder();
+
+url.buildLabelToFieldMap(pledgeHTML);
+
+for (String key : url.labelToField.keyset()){
+    System.debug(key + ' -- ' + url.labelToField.get(key));
+}
+
+
+
+
+
+
+
+
+================================
+
+31.0 APEX_CODE,DEBUG;APEX_PROFILING,DEBUG;CALLOUT,INFO;DB,INFO;VALIDATION,INFO;WORKFLOW,INFO
+Execute Anonymous: String pledgeHTML = '<label for="searchOwner_sidebar">Limit to items I own </label>'
+Execute Anonymous: +'<label for="Name"><span class="requiredMark">*</span>Pledge Name</label>'
+Execute Anonymous: +'<label for="00Nj0000002D7T1"><span class="requiredMark">*</span>Donation Type</label>'
+Execute Anonymous: +'<label for="CF00Nj0000002D7SJ"><span class="requiredMark">*</span>Account</label>'
+Execute Anonymous: +'<label for="00Nj0000002D7Sz">Transaction Type</label>'
+Execute Anonymous: +'<label for="CF00Nj0000002D7SO"><span class="requiredMark">*</span>Donor</label>'
+Execute Anonymous: +'<label for="00Nj0000002D7Sx"><span class="requiredMark">*</span>Start Date</label>'
+Execute Anonymous: +'<label for="00Nj0000002D7Sd">Original Pledge Amount</label>'
+Execute Anonymous: +'<label for="00Nj0000002D7Sl">Pledge Status</label>'
+Execute Anonymous: +'<label for="CF00Nj0000002D7T0">Tribute</label>'
+Execute Anonymous: +'<label for="00Nj0000002D7Si"><span class="requiredMark">*</span>Pledge Amount</label>'
+Execute Anonymous: +'<label for="CF00Nj0000002D7Sf">Parent Donation</label>'
+Execute Anonymous: +'<label for="00Nj0000002D7SM">Benefit Value</label>'
+Execute Anonymous: +'<label for="00Nj0000002D7Sn">Posted</label>'
+Execute Anonymous: +'<label for="00Nj0000002D7Sc"><span class="requiredMark">*</span>Number of Payments</label>'
+Execute Anonymous: +'<label for="00Nj0000002D7Sm">Posted Date</label>'
+Execute Anonymous: +'<label for="CF00Nj0000002D7SN"><span class="requiredMark">*</span>Campaign ID</label>'
+Execute Anonymous: +'<label for="00Nj0000002D7Sw">Reversed</label>'
+Execute Anonymous: +'<label for="CF00Nj0000002D7So">Primary Classification</label>'
+Execute Anonymous: +'<label for="00Nj0000002D7SQ">Description</label>'
+Execute Anonymous: +'<label for="00Nj0000002D7Xv">Payment Type</label>'
+Execute Anonymous: +'<label for="00Nj0000002D7Xo">Credit Card Type</label>'
+Execute Anonymous: +'<label for="00Nj0000002D7Xz">Last Payment Date</label>'
+Execute Anonymous: +'<label for="00Nj0000002D7Xr">Last Payment Amount</label>'
+Execute Anonymous: +'<label for="00Nj0000002D7Sb">Convio Luminate Online Next Payment Date</label>'
+Execute Anonymous: +'<label for="00Nj0000002D7Xt">Next Payment Amount</label>'
+Execute Anonymous: +'<label for="00Nj0000002D7Xs">Last Payment Status</label>'
+Execute Anonymous: +'<label for="00Nj0000002D7T3">Convio Luminate Online Gift Origin</label>'
+Execute Anonymous: +'<label for="00Nj0000002D7Sh">Payments Received</label>'
+Execute Anonymous: +'<label for="00Nj0000002D7SL">Amount Received</label>'
+Execute Anonymous: +'<label for="00Nj0000002D7T2">Write-In Designation</label>'
+Execute Anonymous: +'<label for="00Nj0000002D7Sa">Honor/Memorial Type</label>'
+Execute Anonymous: +'<label for="00Nj0000002D7ST">Honoree Name</label>'
+Execute Anonymous: +'<label for="00Nj0000002D7SY">Honor/Memorial Notification Method</label>'
+Execute Anonymous: +'<label for="00Nj0000002D7SZ">Honor/Memorial Person(s) to Notify</label>'
+Execute Anonymous: +'<label for="00Nj0000002D7SV">Honor/Memorial Notification Address</label>'
+Execute Anonymous: +'<label for="00Nj0000002D7SX">Honor/Memorial Notification Email</label>'
+Execute Anonymous: +'<label for="00Nj0000002D7SW">Honor/Memorial Notification Date</label>'
+Execute Anonymous: +'<label for="00Nj0000002D7SU">Honor/Memorial Message</label>';
+Execute Anonymous: 
+Execute Anonymous: 
+Execute Anonymous: UrlBuilder url = new UrlBuilder();
+Execute Anonymous: 
+Execute Anonymous: url.buildLabelToFieldMap(pledgeHTML);
+Execute Anonymous: 
+Execute Anonymous: for (String key : url.labelToField.keyset()){
+Execute Anonymous:     System.debug(key + ' -- ' + url.labelToField.get(key));
+Execute Anonymous: }
+Execute Anonymous: 
+Execute Anonymous: 
+Execute Anonymous: 
+Execute Anonymous: 
+Execute Anonymous: 
+Execute Anonymous: 
+11:48:14.895 (895495602)|EXECUTION_STARTED
+11:48:14.895 (895506886)|CODE_UNIT_STARTED|[EXTERNAL]|execute_anonymous_apex
+11:48:14.908 (908005078)|METHOD_ENTRY|[1]|01po0000003RBmT|UrlBuilder.UrlBuilder()
+11:48:14.908 (908025109)|METHOD_EXIT|[1]|UrlBuilder
+11:48:14.908 (908201662)|CONSTRUCTOR_ENTRY|[42]|01po0000003RBmT|<init>()
+11:48:14.908 (908325562)|CONSTRUCTOR_EXIT|[42]|01po0000003RBmT|<init>()
+11:48:14.908 (908422874)|METHOD_ENTRY|[44]|01po0000003RBmT|UrlBuilder.buildLabelToFieldMap(String)
+11:48:14.911 (911832025)|METHOD_EXIT|[44]|01po0000003RBmT|UrlBuilder.buildLabelToFieldMap(String)
+11:48:14.912 (912119827)|USER_DEBUG|[47]|DEBUG|Honor/Memorial Notification Date -- 00Nj0000002D7SW
+11:48:14.912 (912177211)|USER_DEBUG|[47]|DEBUG|Parent Donation -- CF00Nj0000002D7Sf
+11:48:14.912 (912226868)|USER_DEBUG|[47]|DEBUG|Last Payment Date -- 00Nj0000002D7Xz
+11:48:14.912 (912275382)|USER_DEBUG|[47]|DEBUG|Pledge Name -- Name
+11:48:14.912 (912323276)|USER_DEBUG|[47]|DEBUG|Posted Date -- 00Nj0000002D7Sm
+11:48:14.912 (912371513)|USER_DEBUG|[47]|DEBUG|Account -- CF00Nj0000002D7SJ
+11:48:14.912 (912419748)|USER_DEBUG|[47]|DEBUG|Convio Luminate Online Next Payment Date -- 00Nj0000002D7Sb
+11:48:14.912 (912468219)|USER_DEBUG|[47]|DEBUG|Next Payment Amount -- 00Nj0000002D7Xt
+11:48:14.912 (912516765)|USER_DEBUG|[47]|DEBUG|Donor -- CF00Nj0000002D7SO
+11:48:14.912 (912564194)|USER_DEBUG|[47]|DEBUG|Honor/Memorial Person(s) to Notify -- 00Nj0000002D7SZ
+11:48:14.912 (912612146)|USER_DEBUG|[47]|DEBUG|Original Pledge Amount -- 00Nj0000002D7Sd
+11:48:14.912 (912659381)|USER_DEBUG|[47]|DEBUG|Pledge Status -- 00Nj0000002D7Sl
+11:48:14.912 (912708873)|USER_DEBUG|[47]|DEBUG|Honoree Name -- 00Nj0000002D7ST
+11:48:14.912 (912757200)|USER_DEBUG|[47]|DEBUG|Last Payment Status -- 00Nj0000002D7Xs
+11:48:14.912 (912804673)|USER_DEBUG|[47]|DEBUG|Honor/Memorial Notification Method -- 00Nj0000002D7SY
+11:48:14.912 (912852090)|USER_DEBUG|[47]|DEBUG|Payments Received -- 00Nj0000002D7Sh
+11:48:14.912 (912899568)|USER_DEBUG|[47]|DEBUG|Convio Luminate Online Gift Origin -- 00Nj0000002D7T3
+11:48:14.912 (912946746)|USER_DEBUG|[47]|DEBUG|Last Payment Amount -- 00Nj0000002D7Xr
+11:48:14.912 (912993557)|USER_DEBUG|[47]|DEBUG|Write-In Designation -- 00Nj0000002D7T2
+11:48:14.913 (913045498)|USER_DEBUG|[47]|DEBUG|Transaction Type -- 00Nj0000002D7Sz
+11:48:14.913 (913096291)|USER_DEBUG|[47]|DEBUG|Limit to items I own  -- searchOwner_sidebar
+11:48:14.913 (913144494)|USER_DEBUG|[47]|DEBUG|Benefit Value -- 00Nj0000002D7SM
+11:48:14.913 (913192532)|USER_DEBUG|[47]|DEBUG|Honor/Memorial Notification Email -- 00Nj0000002D7SX
+11:48:14.913 (913240250)|USER_DEBUG|[47]|DEBUG|Description -- 00Nj0000002D7SQ
+11:48:14.913 (913287931)|USER_DEBUG|[47]|DEBUG|Tribute -- CF00Nj0000002D7T0
+11:48:14.913 (913335526)|USER_DEBUG|[47]|DEBUG|Primary Classification -- CF00Nj0000002D7So
+11:48:14.913 (913382887)|USER_DEBUG|[47]|DEBUG|Credit Card Type -- 00Nj0000002D7Xo
+11:48:14.913 (913429926)|USER_DEBUG|[47]|DEBUG|Campaign ID -- CF00Nj0000002D7SN
+11:48:14.913 (913477325)|USER_DEBUG|[47]|DEBUG|Honor/Memorial Notification Address -- 00Nj0000002D7SV
+11:48:14.913 (913525228)|USER_DEBUG|[47]|DEBUG|Honor/Memorial Message -- 00Nj0000002D7SU
+11:48:14.913 (913572508)|USER_DEBUG|[47]|DEBUG|Number of Payments -- 00Nj0000002D7Sc
+11:48:14.913 (913620047)|USER_DEBUG|[47]|DEBUG|Honor/Memorial Type -- 00Nj0000002D7Sa
+11:48:14.913 (913667215)|USER_DEBUG|[47]|DEBUG|Payment Type -- 00Nj0000002D7Xv
+11:48:14.913 (913714102)|USER_DEBUG|[47]|DEBUG|Donation Type -- 00Nj0000002D7T1
+11:48:14.913 (913761393)|USER_DEBUG|[47]|DEBUG|Posted -- 00Nj0000002D7Sn
+11:48:14.913 (913808511)|USER_DEBUG|[47]|DEBUG|Pledge Amount -- 00Nj0000002D7Si
+11:48:14.913 (913855637)|USER_DEBUG|[47]|DEBUG|Reversed -- 00Nj0000002D7Sw
+11:48:14.913 (913903509)|USER_DEBUG|[47]|DEBUG|Start Date -- 00Nj0000002D7Sx
+11:48:14.913 (913951320)|USER_DEBUG|[47]|DEBUG|Amount Received -- 00Nj0000002D7SL
+11:48:15.306 (914003734)|CUMULATIVE_LIMIT_USAGE
+11:48:15.306|LIMIT_USAGE_FOR_NS|(default)|
+  Number of SOQL queries: 0 out of 100
+  Number of query rows: 0 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 0 out of 150
+  Number of DML rows: 0 out of 10000
+  Maximum CPU time: 0 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+11:48:15.306|CUMULATIVE_LIMIT_USAGE_END
+
+11:48:14.914 (914029578)|CODE_UNIT_FINISHED|execute_anonymous_apex
+11:48:14.915 (915203976)|EXECUTION_FINISHED

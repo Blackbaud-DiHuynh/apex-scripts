@@ -1,0 +1,32 @@
+Execute Anonymous
+
+================================
+
+System.debug(Pledge__c.SObjectType.getDescribe().fields.getMap());
+
+================================
+
+31.0 APEX_CODE,DEBUG;APEX_PROFILING,DEBUG;CALLOUT,INFO;DB,INFO;VALIDATION,INFO;WORKFLOW,INFO
+Execute Anonymous: System.debug(Pledge__c.SObjectType.getDescribe().fields.getMap());
+12:04:04.035 (35023967)|EXECUTION_STARTED
+12:04:04.035 (35035548)|CODE_UNIT_STARTED|[EXTERNAL]|execute_anonymous_apex
+12:04:04.040 (40251953)|USER_DEBUG|[1]|DEBUG|{account__c=Account__c, amount_outstanding__c=Amount_Outstanding__c, amount_received__c=Amount_Received__c, amount_variance_from_plan__c=Amount_Variance_from_Plan__c, batch__c=Batch__c, batch_entry__c=Batch_Entry__c, benefit_value__c=Benefit_Value__c, campaign__c=Campaign__c, contact__c=Contact__c, convio_id__c=Convio_ID__c, ...}
+12:04:04.214 (40297540)|CUMULATIVE_LIMIT_USAGE
+12:04:04.214|LIMIT_USAGE_FOR_NS|(default)|
+  Number of SOQL queries: 0 out of 100
+  Number of query rows: 0 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 0 out of 150
+  Number of DML rows: 0 out of 10000
+  Maximum CPU time: 0 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+12:04:04.214|CUMULATIVE_LIMIT_USAGE_END
+
+12:04:04.040 (40321054)|CODE_UNIT_FINISHED|execute_anonymous_apex
+12:04:04.041 (41462687)|EXECUTION_FINISHED

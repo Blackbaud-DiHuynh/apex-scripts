@@ -1,0 +1,286 @@
+getAllFieldsForSObject.cls
+
+================================
+
+//for the Account object, you can replact that with any object you have, standard or custom
+Schema.DescribeSObjectResult a_desc = Contact.sObjectType.getDescribe(); 
+Map<String, Schema.SObjectField> a_fields = a_desc.fields.getMap();
+
+for(Schema.sObjectField fld:a_fields.values()){ 
+     System.debug(fld);
+}
+
+
+================================
+
+31.0 APEX_CODE,DEBUG;APEX_PROFILING,DEBUG;CALLOUT,INFO;DB,INFO;VALIDATION,INFO;WORKFLOW,INFO
+Execute Anonymous: //for the Account object, you can replact that with any object you have, standard or custom
+Execute Anonymous: Schema.DescribeSObjectResult a_desc = Contact.sObjectType.getDescribe(); 
+Execute Anonymous: Map<String, Schema.SObjectField> a_fields = a_desc.fields.getMap();
+Execute Anonymous: 
+Execute Anonymous: for(Schema.sObjectField fld:a_fields.values()){ 
+Execute Anonymous:      System.debug(fld);
+Execute Anonymous: }
+13:15:16.047 (47272914)|EXECUTION_STARTED
+13:15:16.047 (47281096)|CODE_UNIT_STARTED|[EXTERNAL]|execute_anonymous_apex
+13:15:16.063 (63087555)|USER_DEBUG|[6]|DEBUG|Sustained_Actual_End__c
+13:15:16.063 (63144133)|USER_DEBUG|[6]|DEBUG|summary_last_year_gift_count__c
+13:15:16.063 (63189380)|USER_DEBUG|[6]|DEBUG|Last_Gift_Amount__c
+13:15:16.063 (63232917)|USER_DEBUG|[6]|DEBUG|Member_Since_Date__c
+13:15:16.063 (63276475)|USER_DEBUG|[6]|DEBUG|Revision_ID__c
+13:15:16.063 (63319491)|USER_DEBUG|[6]|DEBUG|OtherPhone
+13:15:16.063 (63362800)|USER_DEBUG|[6]|DEBUG|IsDeleted
+13:15:16.063 (63404241)|USER_DEBUG|[6]|DEBUG|RecordTypeId
+13:15:16.063 (63456699)|USER_DEBUG|[6]|DEBUG|Primary_Engagement_Channel__c
+13:15:16.063 (63502838)|USER_DEBUG|[6]|DEBUG|Last_Online_Login__c
+13:15:16.063 (63545589)|USER_DEBUG|[6]|DEBUG|SystemModstamp
+13:15:16.063 (63588486)|USER_DEBUG|[6]|DEBUG|External_Revision_ID_Membership__c
+13:15:16.063 (63634117)|USER_DEBUG|[6]|DEBUG|OtherStreet
+13:15:16.063 (63677168)|USER_DEBUG|[6]|DEBUG|Vol_Sat_Avail_End__c
+13:15:16.063 (63719273)|USER_DEBUG|[6]|DEBUG|Revision_ID_Email__c
+13:15:16.063 (63761201)|USER_DEBUG|[6]|DEBUG|summary_last_fiscal_year_gift_count__c
+13:15:16.063 (63803160)|USER_DEBUG|[6]|DEBUG|HasOptedOutOfEmail
+13:15:16.063 (63845606)|USER_DEBUG|[6]|DEBUG|First_Combined_Credit_Amount__c
+13:15:16.063 (63888473)|USER_DEBUG|[6]|DEBUG|Synchronization_Rule__c
+13:15:16.063 (63930685)|USER_DEBUG|[6]|DEBUG|Vol_Mon_Avail_Start__c
+13:15:16.063 (63976922)|USER_DEBUG|[6]|DEBUG|JigsawContactId
+13:15:16.064 (64021812)|USER_DEBUG|[6]|DEBUG|Municipality_Override__c
+13:15:16.064 (64093930)|USER_DEBUG|[6]|DEBUG|Lifetime_Combined_Credit_Count__c
+13:15:16.064 (64170200)|USER_DEBUG|[6]|DEBUG|OtherPhoneHash__c
+13:15:16.064 (64244991)|USER_DEBUG|[6]|DEBUG|OtherCity
+13:15:16.064 (64319998)|USER_DEBUG|[6]|DEBUG|LastModifiedById
+13:15:16.064 (64388155)|USER_DEBUG|[6]|DEBUG|Last_TeamRaiser_Registration_Date__c
+13:15:16.064 (64434065)|USER_DEBUG|[6]|DEBUG|PhoneHash__c
+13:15:16.064 (64476666)|USER_DEBUG|[6]|DEBUG|DO_NOT_PACKAGE_Trigger_Test__c
+13:15:16.064 (64519203)|USER_DEBUG|[6]|DEBUG|Marital_Status__c
+13:15:16.064 (64561054)|USER_DEBUG|[6]|DEBUG|Sustained_Planned_End__c
+13:15:16.064 (64602982)|USER_DEBUG|[6]|DEBUG|YTD_Combined_Credit_Count__c
+13:15:16.064 (64645024)|USER_DEBUG|[6]|DEBUG|LastCURequestDate
+13:15:16.064 (64685967)|USER_DEBUG|[6]|DEBUG|LastName
+13:15:16.064 (64728265)|USER_DEBUG|[6]|DEBUG|Vol_Fri_Avail_End__c
+13:15:16.064 (64770650)|USER_DEBUG|[6]|DEBUG|County_District_Override__c
+13:15:16.064 (64813188)|USER_DEBUG|[6]|DEBUG|MailingLongitude
+13:15:16.064 (64851949)|USER_DEBUG|[6]|DEBUG|MailingCountry
+13:15:16.064 (64892820)|USER_DEBUG|[6]|DEBUG|Middle_Name__c
+13:15:16.064 (64934695)|USER_DEBUG|[6]|DEBUG|Membership_Level__c
+13:15:16.064 (64981359)|USER_DEBUG|[6]|DEBUG|Employment_Status__c
+13:15:16.065 (65024866)|USER_DEBUG|[6]|DEBUG|Readiness__c
+13:15:16.065 (65068470)|USER_DEBUG|[6]|DEBUG|State_House_District__c
+13:15:16.065 (65111275)|USER_DEBUG|[6]|DEBUG|County__c
+13:15:16.065 (65153136)|USER_DEBUG|[6]|DEBUG|summary_lifetime_gift_count__c
+13:15:16.065 (65195161)|USER_DEBUG|[6]|DEBUG|Revision_ID_Employer__c
+13:15:16.065 (65237030)|USER_DEBUG|[6]|DEBUG|County_Override__c
+13:15:16.065 (65279024)|USER_DEBUG|[6]|DEBUG|Duplicate_Match_Check_Status__c
+13:15:16.065 (65321156)|USER_DEBUG|[6]|DEBUG|Interests__c
+13:15:16.065 (65360059)|USER_DEBUG|[6]|DEBUG|FirstName
+13:15:16.065 (65400343)|USER_DEBUG|[6]|DEBUG|AssistantName
+13:15:16.065 (65442339)|USER_DEBUG|[6]|DEBUG|Historical_Address_Management__c
+13:15:16.065 (65484543)|USER_DEBUG|[6]|DEBUG|summary_last_year_gift_amount__c
+13:15:16.065 (65531752)|USER_DEBUG|[6]|DEBUG|Employer_City__c
+13:15:16.065 (65605469)|USER_DEBUG|[6]|DEBUG|Cong_District_Override__c
+13:15:16.065 (65677678)|USER_DEBUG|[6]|DEBUG|Origin__c
+13:15:16.065 (65726277)|USER_DEBUG|[6]|DEBUG|Head_of_Household__c
+13:15:16.065 (65769107)|USER_DEBUG|[6]|DEBUG|summary_ytd_gift_amount__c
+13:15:16.065 (65811788)|USER_DEBUG|[6]|DEBUG|Target_Ask_Amount__c
+13:15:16.065 (65854275)|USER_DEBUG|[6]|DEBUG|Largest_Combined_Credit_Amount__c
+13:15:16.065 (65896971)|USER_DEBUG|[6]|DEBUG|Congressional_District__c
+13:15:16.065 (65938902)|USER_DEBUG|[6]|DEBUG|LastActivityDate
+13:15:16.066 (66007811)|USER_DEBUG|[6]|DEBUG|External_ID__c
+13:15:16.066 (66054930)|USER_DEBUG|[6]|DEBUG|Revision_ID_Address__c
+13:15:16.066 (66097805)|USER_DEBUG|[6]|DEBUG|Sustained_Start__c
+13:15:16.066 (66139316)|USER_DEBUG|[6]|DEBUG|Description
+13:15:16.066 (66182400)|USER_DEBUG|[6]|DEBUG|DupeKey_Norm_LastName_Addr__c
+13:15:16.066 (66225549)|USER_DEBUG|[6]|DEBUG|External_Revision_ID_Phone__c
+13:15:16.066 (66268485)|USER_DEBUG|[6]|DEBUG|State_House_District_Override__c
+13:15:16.066 (66307868)|USER_DEBUG|[6]|DEBUG|OtherAddress
+13:15:16.066 (66347682)|USER_DEBUG|[6]|DEBUG|Fax
+13:15:16.066 (66389970)|USER_DEBUG|[6]|DEBUG|Income_Level__c
+13:15:16.066 (66432290)|USER_DEBUG|[6]|DEBUG|Vol_Sun_Avail_End__c
+13:15:16.066 (66474528)|USER_DEBUG|[6]|DEBUG|Gender__c
+13:15:16.066 (66516539)|USER_DEBUG|[6]|DEBUG|Address_Correction_Status__c
+13:15:16.066 (66559153)|USER_DEBUG|[6]|DEBUG|LastNameDblMetaphone2__c
+13:15:16.066 (66601488)|USER_DEBUG|[6]|DEBUG|Online_Message_Body__c
+13:15:16.066 (66643575)|USER_DEBUG|[6]|DEBUG|Employer_Website__c
+13:15:16.066 (66685116)|USER_DEBUG|[6]|DEBUG|Email
+13:15:16.066 (66727481)|USER_DEBUG|[6]|DEBUG|Vol_Wed_Avail_Start__c
+13:15:16.066 (66799558)|USER_DEBUG|[6]|DEBUG|DoNotCall
+13:15:16.066 (66876153)|USER_DEBUG|[6]|DEBUG|Employer_Street__c
+13:15:16.066 (66951815)|USER_DEBUG|[6]|DEBUG|Greeting__c
+13:15:16.067 (67019074)|USER_DEBUG|[6]|DEBUG|EmailUsernameHash__c
+13:15:16.067 (67062564)|USER_DEBUG|[6]|DEBUG|MailingState
+13:15:16.067 (67104759)|USER_DEBUG|[6]|DEBUG|State_Senate_District_Override__c
+13:15:16.067 (67147806)|USER_DEBUG|[6]|DEBUG|External_Revision_ID_Address__c
+13:15:16.067 (67190166)|USER_DEBUG|[6]|DEBUG|Occupation__c
+13:15:16.067 (67232934)|USER_DEBUG|[6]|DEBUG|Last_Gift_Date__c
+13:15:16.067 (67274360)|USER_DEBUG|[6]|DEBUG|Department
+13:15:16.067 (67313451)|USER_DEBUG|[6]|DEBUG|OtherLongitude
+13:15:16.067 (67354184)|USER_DEBUG|[6]|DEBUG|Last_Soft_Credit_Date__c
+13:15:16.067 (67396171)|USER_DEBUG|[6]|DEBUG|LastModifiedDate
+13:15:16.067 (67438838)|USER_DEBUG|[6]|DEBUG|Last_Soft_Credit_Amount__c
+13:15:16.067 (67481290)|USER_DEBUG|[6]|DEBUG|LastReferencedDate
+13:15:16.067 (67523990)|USER_DEBUG|[6]|DEBUG|Last_Combined_Credit_Amount__c
+13:15:16.067 (67563533)|USER_DEBUG|[6]|DEBUG|Name
+13:15:16.067 (67605200)|USER_DEBUG|[6]|DEBUG|Age__c
+13:15:16.067 (67647477)|USER_DEBUG|[6]|DEBUG|Membership_ID__c
+13:15:16.067 (67689846)|USER_DEBUG|[6]|DEBUG|Offline_Sustained_Status__c
+13:15:16.067 (67732477)|USER_DEBUG|[6]|DEBUG|External_Revision_ID_Employer__c
+13:15:16.067 (67781770)|USER_DEBUG|[6]|DEBUG|AccountId
+13:15:16.067 (67823332)|USER_DEBUG|[6]|DEBUG|OtherPostalCode
+13:15:16.067 (67864900)|USER_DEBUG|[6]|DEBUG|Addressee__c
+13:15:16.067 (67907718)|USER_DEBUG|[6]|DEBUG|YTD_Combined_Credit_Amount__c
+13:15:16.067 (67947438)|USER_DEBUG|[6]|DEBUG|MailingPostalCode
+13:15:16.068 (68012548)|USER_DEBUG|[6]|DEBUG|Last_Year_Combined_Credit_Count__c
+13:15:16.068 (68061325)|USER_DEBUG|[6]|DEBUG|Lifetime_Soft_Credit_Amount__c
+13:15:16.068 (68105030)|USER_DEBUG|[6]|DEBUG|Membership_Level_ID__c
+13:15:16.068 (68147299)|USER_DEBUG|[6]|DEBUG|Active_Sustainer__c
+13:15:16.068 (68194498)|USER_DEBUG|[6]|DEBUG|FirstNameVariants__c
+13:15:16.068 (68240777)|USER_DEBUG|[6]|DEBUG|Nickname__c
+13:15:16.068 (68283847)|USER_DEBUG|[6]|DEBUG|AssistantPhoneHash__c
+13:15:16.068 (68326171)|USER_DEBUG|[6]|DEBUG|HomePhoneHash__c
+13:15:16.068 (68368892)|USER_DEBUG|[6]|DEBUG|Vol_Thu_Avail_End__c
+13:15:16.068 (68411520)|USER_DEBUG|[6]|DEBUG|Vol_Mon_Avail_End__c
+13:15:16.068 (68453600)|USER_DEBUG|[6]|DEBUG|Vol_Sat_Avail_Start__c
+13:15:16.068 (68495710)|USER_DEBUG|[6]|DEBUG|Convio_ID_Distinct__c
+13:15:16.068 (68537951)|USER_DEBUG|[6]|DEBUG|Vol_Tue_Avail_Start__c
+13:15:16.068 (68580263)|USER_DEBUG|[6]|DEBUG|Sustained_Status_Online__c
+13:15:16.068 (68622506)|USER_DEBUG|[6]|DEBUG|Capacity__c
+13:15:16.068 (68664755)|USER_DEBUG|[6]|DEBUG|FirstNameDblMetaphone1__c
+13:15:16.068 (68706894)|USER_DEBUG|[6]|DEBUG|Jigsaw
+13:15:16.068 (68745615)|USER_DEBUG|[6]|DEBUG|MailingLatitude
+13:15:16.068 (68786954)|USER_DEBUG|[6]|DEBUG|Email_Subscriptions__c
+13:15:16.068 (68829066)|USER_DEBUG|[6]|DEBUG|LeadSource
+13:15:16.068 (68871326)|USER_DEBUG|[6]|DEBUG|Vol_Tue_Avail_End__c
+13:15:16.068 (68913835)|USER_DEBUG|[6]|DEBUG|FirstNameDblMetaphone2__c
+13:15:16.068 (68955901)|USER_DEBUG|[6]|DEBUG|Preferred_Email_Format__c
+13:15:16.069 (69003729)|USER_DEBUG|[6]|DEBUG|Do_Not_Synchronize__c
+13:15:16.069 (69046650)|USER_DEBUG|[6]|DEBUG|Suffix__c
+13:15:16.069 (69088511)|USER_DEBUG|[6]|DEBUG|CreatedById
+13:15:16.069 (69130787)|USER_DEBUG|[6]|DEBUG|Non_Duplicates__c
+13:15:16.069 (69172650)|USER_DEBUG|[6]|DEBUG|External_Revision_ID__c
+13:15:16.069 (69215270)|USER_DEBUG|[6]|DEBUG|External_Revision_ID_Biographical__c
+13:15:16.069 (69257390)|USER_DEBUG|[6]|DEBUG|Municipality__c
+13:15:16.069 (69299549)|USER_DEBUG|[6]|DEBUG|Employer_State__c
+13:15:16.069 (69340884)|USER_DEBUG|[6]|DEBUG|First_Gift_Date__c
+13:15:16.069 (69383233)|USER_DEBUG|[6]|DEBUG|External_Revision_ID_Other__c
+13:15:16.069 (69425526)|USER_DEBUG|[6]|DEBUG|Sustained_Failure_Code__c
+13:15:16.069 (69466904)|USER_DEBUG|[6]|DEBUG|AssistantPhone
+13:15:16.069 (69508368)|USER_DEBUG|[6]|DEBUG|Vol_Fri_Avail_Start__c
+13:15:16.069 (69549853)|USER_DEBUG|[6]|DEBUG|IsEmailBounced
+13:15:16.069 (69591652)|USER_DEBUG|[6]|DEBUG|MobilePhoneHash__c
+13:15:16.069 (69633868)|USER_DEBUG|[6]|DEBUG|summary_last_fiscal_year_gift_amount__c
+13:15:16.069 (69676300)|USER_DEBUG|[6]|DEBUG|Inclination__c
+13:15:16.069 (69718877)|USER_DEBUG|[6]|DEBUG|State_Senate_District__c
+13:15:16.069 (69760050)|USER_DEBUG|[6]|DEBUG|CreatedDate
+13:15:16.069 (69801479)|USER_DEBUG|[6]|DEBUG|OwnerId
+13:15:16.069 (69842452)|USER_DEBUG|[6]|DEBUG|LastViewedDate
+13:15:16.069 (69884829)|USER_DEBUG|[6]|DEBUG|Membership_Last_Renewal_Date__c
+13:15:16.069 (69927288)|USER_DEBUG|[6]|DEBUG|Largest_Soft_Credit_Amount__c
+13:15:16.069 (69973258)|USER_DEBUG|[6]|DEBUG|YTD_Soft_Credit_Amount__c
+13:15:16.070 (70016846)|USER_DEBUG|[6]|DEBUG|Revision_ID_Phone__c
+13:15:16.070 (70065151)|USER_DEBUG|[6]|DEBUG|Lifetime_Combined_Credit_Amount__c
+13:15:16.070 (70109155)|USER_DEBUG|[6]|DEBUG|AddressHash__c
+13:15:16.070 (70151153)|USER_DEBUG|[6]|DEBUG|Membership_Status__c
+13:15:16.070 (70199062)|USER_DEBUG|[6]|DEBUG|ReportsToId
+13:15:16.070 (70243136)|USER_DEBUG|[6]|DEBUG|Largest_Gift_Amount__c
+13:15:16.070 (70284874)|USER_DEBUG|[6]|DEBUG|PhotoUrl
+13:15:16.070 (70327064)|USER_DEBUG|[6]|DEBUG|Open_Major_Gift__c
+13:15:16.070 (70369319)|USER_DEBUG|[6]|DEBUG|Vol_Sun_Avail_Start__c
+13:15:16.070 (70411907)|USER_DEBUG|[6]|DEBUG|Lifetime_Soft_Credit_Count__c
+13:15:16.070 (70453983)|USER_DEBUG|[6]|DEBUG|LastNameDblMetaphone1__c
+13:15:16.070 (70496084)|USER_DEBUG|[6]|DEBUG|Largest_Combined_Credit_Date__c
+13:15:16.070 (70538191)|USER_DEBUG|[6]|DEBUG|Last_Year_Combined_Credit_Amount__c
+13:15:16.070 (70579757)|USER_DEBUG|[6]|DEBUG|MobilePhone
+13:15:16.070 (70621866)|USER_DEBUG|[6]|DEBUG|First_Soft_Credit_Date__c
+13:15:16.070 (70661019)|USER_DEBUG|[6]|DEBUG|MailingAddress
+13:15:16.070 (70700792)|USER_DEBUG|[6]|DEBUG|Title
+13:15:16.070 (70742561)|USER_DEBUG|[6]|DEBUG|Prof_Suffix__c
+13:15:16.070 (70784564)|USER_DEBUG|[6]|DEBUG|Historical_Address_Type__c
+13:15:16.070 (70826970)|USER_DEBUG|[6]|DEBUG|EmailBouncedDate
+13:15:16.070 (70865444)|USER_DEBUG|[6]|DEBUG|MailingStreet
+13:15:16.070 (70905122)|USER_DEBUG|[6]|DEBUG|HomePhone
+13:15:16.070 (70947282)|USER_DEBUG|[6]|DEBUG|Normalization_Status__c
+13:15:16.070 (70993501)|USER_DEBUG|[6]|DEBUG|EmailBouncedReason
+13:15:16.071 (71035995)|USER_DEBUG|[6]|DEBUG|Donor_Status__c
+13:15:16.071 (71079609)|USER_DEBUG|[6]|DEBUG|Last_Combined_Credit_Date__c
+13:15:16.071 (71121624)|USER_DEBUG|[6]|DEBUG|Sustained_Card_Expiration__c
+13:15:16.071 (71163819)|USER_DEBUG|[6]|DEBUG|YTD_Soft_Credit_Count__c
+13:15:16.071 (71206299)|USER_DEBUG|[6]|DEBUG|Last_Summary_Calculation_Date__c
+13:15:16.071 (71248241)|USER_DEBUG|[6]|DEBUG|Sustained_Failure_Count__c
+13:15:16.071 (71289995)|USER_DEBUG|[6]|DEBUG|Email_Status__c
+13:15:16.071 (71331344)|USER_DEBUG|[6]|DEBUG|Revision_ID_Membership__c
+13:15:16.071 (71372639)|USER_DEBUG|[6]|DEBUG|Email_Opt_Out_Date__c
+13:15:16.071 (71414571)|USER_DEBUG|[6]|DEBUG|Religion__c
+13:15:16.071 (71452949)|USER_DEBUG|[6]|DEBUG|Salutation
+13:15:16.071 (71493745)|USER_DEBUG|[6]|DEBUG|First_Gift_Amount__c
+13:15:16.071 (71535323)|USER_DEBUG|[6]|DEBUG|Phone
+13:15:16.071 (71573430)|USER_DEBUG|[6]|DEBUG|OtherState
+13:15:16.071 (71614134)|USER_DEBUG|[6]|DEBUG|Mailing_Address_Type__c
+13:15:16.071 (71656407)|USER_DEBUG|[6]|DEBUG|Convio_ID__c
+13:15:16.071 (71698998)|USER_DEBUG|[6]|DEBUG|Employer_Country__c
+13:15:16.071 (71740598)|USER_DEBUG|[6]|DEBUG|External_Revision_ID_Activity__c
+13:15:16.071 (71781894)|USER_DEBUG|[6]|DEBUG|Preferred_Address__c
+13:15:16.071 (71823062)|USER_DEBUG|[6]|DEBUG|Revision_ID_Other__c
+13:15:16.071 (71864897)|USER_DEBUG|[6]|DEBUG|Employer_Postal_Code__c
+13:15:16.071 (71906950)|USER_DEBUG|[6]|DEBUG|Vol_Wed_Avail_End__c
+13:15:16.071 (71948628)|USER_DEBUG|[6]|DEBUG|Birth_Place__c
+13:15:16.071 (71995080)|USER_DEBUG|[6]|DEBUG|summary_lifetime_gift_amount__c
+13:15:16.072 (72037258)|USER_DEBUG|[6]|DEBUG|Other_Email__c
+13:15:16.072 (72080061)|USER_DEBUG|[6]|DEBUG|HasOptedOutOfFax
+13:15:16.072 (72132499)|USER_DEBUG|[6]|DEBUG|Match_Group__c
+13:15:16.072 (72177958)|USER_DEBUG|[6]|DEBUG|Largest_Soft_Credit_Date__c
+13:15:16.072 (72221105)|USER_DEBUG|[6]|DEBUG|DupeKey_Last_Street_Zip__c
+13:15:16.072 (72263305)|USER_DEBUG|[6]|DEBUG|LastCUUpdateDate
+13:15:16.072 (72305866)|USER_DEBUG|[6]|DEBUG|Last_Year_Soft_Credit_Amount__c
+13:15:16.072 (72348282)|USER_DEBUG|[6]|DEBUG|First_Soft_Credit_Amount__c
+13:15:16.072 (72390957)|USER_DEBUG|[6]|DEBUG|Sustained_Monthly_Amount__c
+13:15:16.072 (72433081)|USER_DEBUG|[6]|DEBUG|Website__c
+13:15:16.072 (72474946)|USER_DEBUG|[6]|DEBUG|Vol_Thu_Avail_Start__c
+13:15:16.072 (72516476)|USER_DEBUG|[6]|DEBUG|summary_ytd_gift_count__c
+13:15:16.072 (72558673)|USER_DEBUG|[6]|DEBUG|Ethnicity__c
+13:15:16.072 (72600135)|USER_DEBUG|[6]|DEBUG|Maiden_Name__c
+13:15:16.072 (72641987)|USER_DEBUG|[6]|DEBUG|County_District__c
+13:15:16.072 (72683804)|USER_DEBUG|[6]|DEBUG|Deceased__c
+13:15:16.072 (72725588)|USER_DEBUG|[6]|DEBUG|Last_Year_Soft_Credit_Count__c
+13:15:16.072 (72767423)|USER_DEBUG|[6]|DEBUG|Id
+13:15:16.072 (72809337)|USER_DEBUG|[6]|DEBUG|First_Combined_Credit_Date__c
+13:15:16.072 (72851441)|USER_DEBUG|[6]|DEBUG|Employer__c
+13:15:16.072 (72893599)|USER_DEBUG|[6]|DEBUG|Create_Household__c
+13:15:16.072 (72935521)|USER_DEBUG|[6]|DEBUG|Sustained_Gift_Count__c
+13:15:16.072 (72981875)|USER_DEBUG|[6]|DEBUG|summary_fytd_gift_count__c
+13:15:16.073 (73021943)|USER_DEBUG|[6]|DEBUG|OtherLatitude
+13:15:16.073 (73064542)|USER_DEBUG|[6]|DEBUG|Anonymous__c
+13:15:16.073 (73111885)|USER_DEBUG|[6]|DEBUG|Contact_Record_ID__c
+13:15:16.073 (73153663)|USER_DEBUG|[6]|DEBUG|Birthdate
+13:15:16.073 (73196086)|USER_DEBUG|[6]|DEBUG|Postal_Mail_Opt_Out__c
+13:15:16.073 (73238201)|USER_DEBUG|[6]|DEBUG|Membership_Expiration_Date__c
+13:15:16.073 (73280129)|USER_DEBUG|[6]|DEBUG|Revision_ID_Activity__c
+13:15:16.073 (73321968)|USER_DEBUG|[6]|DEBUG|MasterRecordId
+13:15:16.073 (73364132)|USER_DEBUG|[6]|DEBUG|External_Revision_ID_Email__c
+13:15:16.073 (73406370)|USER_DEBUG|[6]|DEBUG|Preferred_Phone__c
+13:15:16.073 (73448254)|USER_DEBUG|[6]|DEBUG|Employer_Industry__c
+13:15:16.073 (73490300)|USER_DEBUG|[6]|DEBUG|Active__c
+13:15:16.073 (73532507)|USER_DEBUG|[6]|DEBUG|Revision_ID_Biographical__c
+13:15:16.073 (73574449)|USER_DEBUG|[6]|DEBUG|Largest_Gift_Date__c
+13:15:16.073 (73613376)|USER_DEBUG|[6]|DEBUG|OtherCountry
+13:15:16.073 (73654292)|USER_DEBUG|[6]|DEBUG|summary_fytd_gift_amount__c
+13:15:16.073 (73697404)|USER_DEBUG|[6]|DEBUG|DupeKey_Street_Zip__c
+13:15:16.073 (73762284)|USER_DEBUG|[6]|DEBUG|MailingCity
+13:15:16.446 (73809228)|CUMULATIVE_LIMIT_USAGE
+13:15:16.446|LIMIT_USAGE_FOR_NS|(default)|
+  Number of SOQL queries: 0 out of 100
+  Number of query rows: 0 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 0 out of 150
+  Number of DML rows: 0 out of 10000
+  Maximum CPU time: 0 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+13:15:16.446|CUMULATIVE_LIMIT_USAGE_END
+
+13:15:16.073 (73831036)|CODE_UNIT_FINISHED|execute_anonymous_apex
+13:15:16.075 (75586082)|EXECUTION_FINISHED

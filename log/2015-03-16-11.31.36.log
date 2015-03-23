@@ -1,0 +1,196 @@
+Execute Anonymous
+
+================================
+
+MetadataService.MetadataPort service = MetadataUtils.createService();
+
+List<String> layoutNames = new List<String>{
+	Utils.addNamespace('TeamRaiser_Registration__c-TeamRaiser Registration Layout')};
+
+List<MetadataService.Layout> requestedLayouts = (List<MetadataService.Layout>)service.readMetadata('Layout', layoutNames).getRecords();
+
+System.debug('requested layouts: ' + requestedLayouts);
+
+================================
+
+31.0 APEX_CODE,DEBUG;APEX_PROFILING,DEBUG;CALLOUT,INFO;DB,INFO;VALIDATION,INFO;WORKFLOW,INFO
+Execute Anonymous: MetadataService.MetadataPort service = MetadataUtils.createService();
+Execute Anonymous: 
+Execute Anonymous: List<String> layoutNames = new List<String>{
+Execute Anonymous: 	Utils.addNamespace('TeamRaiser_Registration__c-TeamRaiser Registration Layout')};
+Execute Anonymous: 
+Execute Anonymous: List<MetadataService.Layout> requestedLayouts = (List<MetadataService.Layout>)service.readMetadata('Layout', layoutNames).getRecords();
+Execute Anonymous: 
+Execute Anonymous: System.debug('requested layouts: ' + requestedLayouts);
+09:31:35.508 (508215888)|EXECUTION_STARTED
+09:31:35.508 (508225228)|CODE_UNIT_STARTED|[EXTERNAL]|execute_anonymous_apex
+09:31:35.673 (673203955)|METHOD_ENTRY|[2]|01po0000003Oh7F|MetadataUtils.MetadataUtils()
+09:31:35.673 (673272352)|METHOD_EXIT|[2]|MetadataUtils
+09:31:35.673 (673307513)|METHOD_ENTRY|[1]|01po0000003Oh7F|MetadataUtils.createService()
+09:31:35.678 (678862577)|CONSTRUCTOR_ENTRY|[9]|01po0000003Oh7D|<init>()
+09:31:35.679 (679301812)|CONSTRUCTOR_EXIT|[9]|01po0000003Oh7D|<init>()
+09:31:35.679 (679336324)|CONSTRUCTOR_ENTRY|[11]|01po0000003Oh7D|<init>()
+09:31:35.679 (679416812)|CONSTRUCTOR_EXIT|[11]|01po0000003Oh7D|<init>()
+09:31:35.684 (684323533)|METHOD_EXIT|[1]|01po0000003Oh7F|MetadataUtils.createService()
+09:31:35.707 (707079478)|METHOD_ENTRY|[1]|01po0000000dllI|Utils.Utils()
+09:31:35.715 (715879379)|METHOD_EXIT|[1]|Utils
+09:31:35.715 (715927536)|METHOD_ENTRY|[3]|01po0000000dllI|Utils.addNamespace(String)
+09:31:35.716 (716123986)|METHOD_ENTRY|[1]|01po0000000dlkU|Constants.Constants()
+09:31:35.722 (722073035)|METHOD_EXIT|[1]|Constants
+09:31:35.722 (722094477)|METHOD_EXIT|[3]|01po0000000dllI|Utils.addNamespace(String)
+09:31:35.722 (722200321)|METHOD_ENTRY|[6]|01po0000003Oh7D|MetadataService.MetadataPort.readMetadata(String, List<String>)
+09:31:35.725 (725704543)|CONSTRUCTOR_ENTRY|[8870]|01po0000003Oh7D|<init>()
+09:31:35.725 (725891141)|CONSTRUCTOR_EXIT|[8870]|01po0000003Oh7D|<init>()
+09:31:35.773 (773855439)|CALLOUT_REQUEST|[8876]|<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Header><SessionHeader xmlns="http://soap.sforce.com/2006/04/metadata"><sessionId>00Do0000000HyRH!AQYAQEvTBxdD59kQcX68mhGCV.AL4gE8X6jl3quIKwOjC9Rt2VrlU0QOZSBkq8Sh0ajJETmfDsw7nTrO3tWtAr9pqj6HXf7I</sessionId></SessionHeader></env:Header><env:Body><readMetadata xmlns="http://soap.sforce.com/2006/04/metadata"><type>Layout</type><fullNames>TeamRaiser_Registration__c-TeamRaiser Registration Layout</fullNames></readMetadata></env:Body></env:Envelope>
+09:31:35.773 (773909658)|CALLOUT_REQUEST|[8876]|readMetadata_element:[apex_schema_type_info=(http://soap.sforce.com/2006/04/metadata, true, false), field_order_type_info=(type_x, fullNames), fullNames=(TeamRaiser_Registration__c-TeamRaiser Registration Layout), fullNames_type_info=(fullNames, http://soap.sforce.com/2006/04/metadata, null, 0, -1, false), type_x=Layout, type_x_type_info=(type, http://soap.sforce.com/2006/04/metadata, null, 1, 1, false)]::SFDC_STACK_DEPTH=1 SOAPAction="" User-Agent=SFDC-Callout/33.0 Accept=text/xml Content-Type=text/xml; charset=UTF-8 
+09:31:35.953 (953813502)|CALLOUT_RESPONSE|[8876]|<?xml version="1.0" encoding="UTF-8"?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><soapenv:Body><readMetadataResponse><result><records xsi:type="Layout"><fullName>TeamRaiser_Registration__c-TeamRaiser Registration Layout</fullName><excludeButtons>Submit</excludeButtons><layoutSections><customLabel>true</customLabel><detailHeading>true</detailHeading><editHeading>true</editHeading><label>TeamRaiser Progress</label><layoutColumns><layoutItems><height>420</height><page>TeamRaiserProgressWidget</page><showLabel>false</showLabel><showScrollbars>false</showScrollbars><width>100%</width></layoutItems></layoutColumns><style>OneColumn</style></layoutSections><layoutSections><customLabel>false</customLabel><detailHeading>false</detailHeading><editHeading>true</editHeading><label>Information</label><layoutColumns><layoutItems><behavior>Required</behavior><field>Name</field></layoutItems><layoutItems><behavior>Required</behavior><field>Contact__c</field></layoutItems><layoutItems><behavior>Edit</behavior><field>Participation_Type__c</field></layoutItems><layoutItems><behavior>Edit</behavior><field>Participant_s_Home_Page__c</field></layoutItems><layoutItems><behavior>Edit</behavior><field>Registration_Date__c</field></layoutItems><layoutItems><behavior>Edit</behavior><field>Opportunity__c</field></layoutItems><layoutItems><behavior>Required</behavior><field>TeamRaiser_Participation_Type__c</field></layoutItems></layoutColumns><layoutColumns><layoutItems><behavior>Edit</behavior><field>Fundraising_Goal__c</field></layoutItems><layoutItems><behavior>Edit</behavior><field>Total_Raised__c</field></layoutItems><layoutItems><behavior>Required</behavior><field>Campaign__c</field></layoutItems><layoutItems><behavior>Edit</behavior><field>Team_Captain__c</field></layoutItems><layoutItems><behavior>Edit</behavior><field>Team__c</field></layoutItems></layoutColumns><style>TwoColumnsTopToBottom</style></layoutSections><layoutSections><customLabel>true</customLabel><detailHeading>false</detailHeading><editHeading>false</editHeading><label>Separator</label><layoutColumns><layoutItems><behavior>Required</behavior><field>Registration_Fee__c</field></layoutItems></layoutColumns><layoutColumns><layoutItems><behavior>Required</behavior><field>Extra_Gift__c</field></layoutItems><layoutItems><behavior>Edit</behavior><field>Upsell_Amount__c</field></layoutItems></layoutColumns><style>TwoColumnsLeftToRight</style></layoutSections><layoutSections><customLabel>false</customLabel><detailHeading>true</detailHeading><editHeading>true</editHeading><label>System Information</label><layoutColumns><layoutItems><behavior>Readonly</behavior><field>CreatedById</field></layoutItems></layoutColumns><layoutColumns><layoutItems><behavior>Readonly</behavior><field>LastModifiedById</field></layoutItems></layoutColumns><style>TwoColumnsTopToBottom</style></layoutSections><layoutSections><customLabel>true</customLabel><detailHeading>false</detailHeading><editHeading>false</editHeading><label>Custom Links</label><layoutColumns/><layoutColumns/><layoutColumns/><style>CustomLinks</style></layoutSections><relatedLists><fields>OPPORTUNITY.NAME</fields><fields>ACCOUNT.NAME</fields><fields>OPPORTUNITY.CLOSE_DATE</fields><fields>OPPORTUNITY.AMOUNT</fields><relatedList>Opportunity.TeamRaiser_Registration__c</relatedList></relatedLists><relatedLists><fields>NAME</fields><fields>Upsell_Item__c</fields><fields>Item_Price__c</fields><fields>Item_Quantity__c</fields><fields>Total_Amount__c</fields><fields>Date_Fulfilled__c</fields><relatedList>TeamRaiser_Registration_Upsell__c.TeamRaiser_Registration__c</relatedList></relatedLists><showEmailCheckbox>false</showEmailCheckbox><showHighlightsPanel>false</showHighlightsPanel><showInteractionLogPanel>false</showInteractionLogPanel><showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox><showSubmitAndAttachButton>false</showSubmitAndAttachButton><summaryLayout><masterLabel>00ho0000000pGUP</masterLabel><sizeX>4</sizeX><sizeY>0</sizeY><summaryLayoutStyle>Default</summaryLayoutStyle></summaryLayout></records></result></readMetadataResponse></soapenv:Body></soapenv:Envelope>
+09:31:35.974 (974656373)|CONSTRUCTOR_ENTRY|[4077]|01po0000003Oh7D|<init>()
+09:31:35.974 (974802597)|CONSTRUCTOR_EXIT|[4077]|01po0000003Oh7D|<init>()
+09:31:35.993 (993013656)|CALLOUT_RESPONSE|[8876]|
+09:31:35.993 (993161316)|METHOD_ENTRY|[8889]|01po0000003Oh7D|MetadataService.readLayoutResponse_element.getResult()
+09:31:35.993 (993187488)|METHOD_EXIT|[8889]|01po0000003Oh7D|MetadataService.readLayoutResponse_element.getResult()
+09:31:35.993 (993196885)|METHOD_EXIT|[6]|01po0000003Oh7D|MetadataService.MetadataPort.readMetadata(String, List<String>)
+09:31:35.993 (993260605)|METHOD_ENTRY|[6]|01po0000003Oh7D|MetadataService.ReadLayoutResult.getRecords()
+09:31:35.993 (993274556)|METHOD_EXIT|[6]|01po0000003Oh7D|MetadataService.ReadLayoutResult.getRecords()
+09:31:35.994 (994869742)|USER_DEBUG|[8]|DEBUG|requested layouts: (FullName: TeamRaiser_Registration__c-TeamRaiser Registration Layout
+customButtons: null
+headers: null
+Sections: (customLabel: true
+detailHeading: true
+label: TeamRaiser Progress
+layoutColumns: (LayoutColumn:[apex_schema_type_info=(http://soap.sforce.com/2006/04/metadata, true, false), field_order_type_info=(layoutItems, reserved), layoutItems=(behavior: null
+page_x: TeamRaiserProgressWidget
+scontrol: null
+canvas: null
+component: null
+), layoutItems_type_info=(layoutItems, http://soap.sforce.com/2006/04/metadata, null, 0, -1, false), reserved=null, reserved_type_info=(reserved, http://soap.sforce.com/2006/04/metadata, null, 0, 1, false)])
+style: OneColumn
+, customLabel: false
+detailHeading: false
+label: Information
+layoutColumns: (LayoutColumn:[apex_schema_type_info=(http://soap.sforce.com/2006/04/metadata, true, false), field_order_type_info=(layoutItems, reserved), layoutItems=(behavior: Required
+page_x: null
+scontrol: null
+canvas: null
+component: null
+, behavior: Required
+page_x: null
+scontrol: null
+canvas: null
+component: null
+, behavior: Edit
+page_x: null
+scontrol: null
+canvas: null
+component: null
+, behavior: Edit
+page_x: null
+scontrol: null
+canvas: null
+component: null
+, behavior: Edit
+page_x: null
+scontrol: null
+canvas: null
+component: null
+, behavior: Edit
+page_x: null
+scontrol: null
+canvas: null
+component: null
+, behavior: Required
+page_x: null
+scontrol: null
+canvas: null
+component: null
+), layoutItems_type_info=(layoutItems, http://soap.sforce.com/2006/04/metadata, null, 0, -1, false), reserved=null, reserved_type_info=(reserved, http://soap.sforce.com/2006/04/metadata, null, 0, 1, false)], LayoutColumn:[apex_schema_type_info=(http://soap.sforce.com/2006/04/metadata, true, false), field_order_type_info=(layoutItems, reserved), layoutItems=(behavior: Edit
+page_x: null
+scontrol: null
+canvas: null
+component: null
+, behavior: Edit
+page_x: null
+scontrol: null
+canvas: null
+component: null
+, behavior: Required
+page_x: null
+scontrol: null
+canvas: null
+component: null
+, behavior: Edit
+page_x: null
+scontrol: null
+canvas: null
+component: null
+, behavior: Edit
+page_x: null
+scontrol: null
+canvas: null
+component: null
+), layoutItems_type_info=(layoutItems, http://soap.sforce.com/2006/04/metadata, null, 0, -1, false), reserved=null, reserved_type_info=(reserved, http://soap.sforce.com/2006/04/metadata, null, 0, 1, false)])
+style: TwoColumnsTopToBottom
+, customLabel: true
+detailHeading: false
+label: Separator
+layoutColumns: (LayoutColumn:[apex_schema_type_info=(http://soap.sforce.com/2006/04/metadata, true, false), field_order_type_info=(layoutItems, reserved), layoutItems=(behavior: Required
+page_x: null
+scontrol: null
+canvas: null
+component: null
+), layoutItems_type_info=(layoutItems, http://soap.sforce.com/2006/04/metadata, null, 0, -1, false), reserved=null, reserved_type_info=(reserved, http://soap.sforce.com/2006/04/metadata, null, 0, 1, false)], LayoutColumn:[apex_schema_type_info=(http://soap.sforce.com/2006/04/metadata, true, false), field_order_type_info=(layoutItems, reserved), layoutItems=(behavior: Required
+page_x: null
+scontrol: null
+canvas: null
+component: null
+, behavior: Edit
+page_x: null
+scontrol: null
+canvas: null
+component: null
+), layoutItems_type_info=(layoutItems, http://soap.sforce.com/2006/04/metadata, null, 0, -1, false), reserved=null, reserved_type_info=(reserved, http://soap.sforce.com/2006/04/metadata, null, 0, 1, false)])
+style: TwoColumnsLeftToRight
+, customLabel: false
+detailHeading: true
+label: System Information
+layoutColumns: (LayoutColumn:[apex_schema_type_info=(http://soap.sforce.com/2006/04/metadata, true, false), field_order_type_info=(layoutItems, reserved), layoutItems=(behavior: Readonly
+page_x: null
+scontrol: null
+canvas: null
+component: null
+), layoutItems_type_info=(layoutItems, http://soap.sforce.com/2006/04/metadata, null, 0, -1, false), reserved=null, reserved_type_info=(reserved, http://soap.sforce.com/2006/04/metadata, null, 0, 1, false)], LayoutColumn:[apex_schema_type_info=(http://soap.sforce.com/2006/04/metadata, true, false), field_order_type_info=(layoutItems, reserved), layoutItems=(behavior: Readonly
+page_x: null
+scontrol: null
+canvas: null
+component: null
+), layoutItems_type_info=(layoutItems, http://soap.sforce.com/2006/04/metadata, null, 0, -1, false), reserved=null, reserved_type_info=(reserved, http://soap.sforce.com/2006/04/metadata, null, 0, 1, false)])
+style: TwoColumnsTopToBottom
+, customLabel: true
+detailHeading: false
+label: Custom Links
+layoutColumns: (LayoutColumn:[apex_schema_type_info=(http://soap.sforce.com/2006/04/metadata, true, false), field_order_type_info=(layoutItems, reserved), layoutItems=null, layoutItems_type_info=(layoutItems, http://soap.sforce.com/2006/04/metadata, null, 0, -1, false), reserved=null, reserved_type_info=(reserved, http://soap.sforce.com/2006/04/metadata, null, 0, 1, false)], LayoutColumn:[apex_schema_type_info=(http://soap.sforce.com/2006/04/metadata, true, false), field_order_type_info=(layoutItems, reserved), layoutItems=null, layoutItems_type_info=(layoutItems, http://soap.sforce.com/2006/04/metadata, null, 0, -1, false), reserved=null, reserved_type_info=(reserved, http://soap.sforce.com/2006/04/metadata, null, 0, 1, false)], LayoutColumn:[apex_schema_type_info=(http://soap.sforce.com/2006/04/metadata, true, false), field_order_type_info=(layoutItems, reserved), layoutItems=null, layoutItems_type_info=(layoutItems, http://soap.sforce.com/2006/04/metadata, null, 0, -1, false), reserved=null, reserved_type_info=(reserved, http://soap.sforce.com/2006/04/metadata, null, 0, 1, false)])
+style: CustomLinks
+)
+relatedObjects: null
+relatedLists: (RelatedListItem:[apex_schema_type_info=(http://soap.sforce.com/2006/04/metadata, true, false), customButtons=null, customButtons_type_info=(customButtons, http://soap.sforce.com/2006/04/metadata, null, 0, -1, false), excludeButtons=null, excludeButtons_type_info=(excludeButtons, http://soap.sforce.com/2006/04/metadata, null, 0, -1, false), field_order_type_info=(customButtons, excludeButtons, fields, relatedList, sortField, sortOrder), fields=(OPPORTUNITY.NAME, ACCOUNT.NAME, OPPORTUNITY.CLOSE_DATE, OPPORTUNITY.AMOUNT), fields_type_info=(fields, http://soap.sforce.com/2006/04/metadata, null, 0, -1, false), relatedList=Opportunity.TeamRaiser_Registration__c, relatedList_type_info=(relatedList, http://soap.sforce.com/2006/04/metadata, null, 1, 1, false), sortField=null, sortField_type_info=(sortField, http://soap.sforce.com/2006/04/metadata, null, 0, 1, false), sortOrder=null, sortOrder_type_info=(sortOrder, http://soap.sforce.com/2006/04/metadata, null, 0, 1, false)], RelatedListItem:[apex_schema_type_info=(http://soap.sforce.com/2006/04/metadata, true, false), customButtons=null, customButtons_type_info=(customButtons, http://soap.sforce.com/2006/04/metadata, null, 0, -1, false), excludeButtons=null, excludeButtons_type_info=(excludeButtons, http://soap.sforce.com/2006/04/metadata, null, 0, -1, false), field_order_type_info=(customButtons, excludeButtons, fields, relatedList, sortField, sortOrder), fields=(NAME, Upsell_Item__c, Item_Price__c, Item_Quantity__c, Total_Amount__c, Date_Fulfilled__c), fields_type_info=(fields, http://soap.sforce.com/2006/04/metadata, null, 0, -1, false), relatedList=TeamRaiser_Registration_Upsell__c.TeamRaiser_Registration__c, relatedList_type_info=(relatedList, http://soap.sforce.com/2006/04/metadata, null, 1, 1, false), sortField=null, sortField_type_info=(sortField, http://soap.sforce.com/2006/04/metadata, null, 0, 1, false), sortOrder=null, sortOrder_type_info=(sortOrder, http://soap.sforce.com/2006/04/metadata, null, 0, 1, false)])
+miniLayout null
+)
+09:31:36.664 (994937730)|CUMULATIVE_LIMIT_USAGE
+09:31:36.664|LIMIT_USAGE_FOR_NS|(default)|
+  Number of SOQL queries: 0 out of 100
+  Number of query rows: 0 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 0 out of 150
+  Number of DML rows: 0 out of 10000
+  Maximum CPU time: 16 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 1 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+09:31:36.664|CUMULATIVE_LIMIT_USAGE_END
+
+09:31:35.994 (994962461)|CODE_UNIT_FINISHED|execute_anonymous_apex
+09:31:35.996 (996709604)|EXECUTION_FINISHED
