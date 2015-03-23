@@ -1,0 +1,160 @@
+getAllFieldsForSObject.cls
+
+================================
+
+//for the Account object, you can replact that with any object you have, standard or custom
+Schema.DescribeSObjectResult a_desc = Account.sObjectType.getDescribe(); 
+Map<String, Schema.SObjectField> a_fields = a_desc.fields.getMap();
+
+for(Schema.sObjectField fld:a_fields.values()){ 
+     System.debug(fld);
+}
+
+
+================================
+
+31.0 APEX_CODE,DEBUG;APEX_PROFILING,DEBUG;CALLOUT,INFO;DB,INFO;VALIDATION,INFO;WORKFLOW,INFO
+Execute Anonymous: //for the Account object, you can replact that with any object you have, standard or custom
+Execute Anonymous: Schema.DescribeSObjectResult a_desc = Account.sObjectType.getDescribe(); 
+Execute Anonymous: Map<String, Schema.SObjectField> a_fields = a_desc.fields.getMap();
+Execute Anonymous: 
+Execute Anonymous: for(Schema.sObjectField fld:a_fields.values()){ 
+Execute Anonymous:      System.debug(fld);
+Execute Anonymous: }
+13:13:26.026 (26066619)|EXECUTION_STARTED
+13:13:26.026 (26083308)|CODE_UNIT_STARTED|[EXTERNAL]|execute_anonymous_apex
+13:13:26.033 (33417904)|USER_DEBUG|[6]|DEBUG|Supports_Matching__c
+13:13:26.033 (33479897)|USER_DEBUG|[6]|DEBUG|Latest_Gift_Amount__c
+13:13:26.033 (33532289)|USER_DEBUG|[6]|DEBUG|Jigsaw
+13:13:26.033 (33582210)|USER_DEBUG|[6]|DEBUG|ShippingLatitude
+13:13:26.033 (33642765)|USER_DEBUG|[6]|DEBUG|ParentId
+13:13:26.033 (33695435)|USER_DEBUG|[6]|DEBUG|Salutation_Casual_Formula__c
+13:13:26.033 (33745497)|USER_DEBUG|[6]|DEBUG|BillingAddress
+13:13:26.033 (33793292)|USER_DEBUG|[6]|DEBUG|CreatedById
+13:13:26.033 (33837931)|USER_DEBUG|[6]|DEBUG|BillingCity
+13:13:26.033 (33884524)|USER_DEBUG|[6]|DEBUG|IsDeleted
+13:13:26.033 (33929142)|USER_DEBUG|[6]|DEBUG|BillingLongitude
+13:13:26.033 (33975450)|USER_DEBUG|[6]|DEBUG|RecordTypeId
+13:13:26.034 (34024706)|USER_DEBUG|[6]|DEBUG|First_Gift_Date__c
+13:13:26.034 (34074228)|USER_DEBUG|[6]|DEBUG|SystemModstamp
+13:13:26.034 (34121708)|USER_DEBUG|[6]|DEBUG|Industry
+13:13:26.034 (34169783)|USER_DEBUG|[6]|DEBUG|First_Household_Gift_Amount__c
+13:13:26.034 (34218131)|USER_DEBUG|[6]|DEBUG|First_Combined_Credit_Amount__c
+13:13:26.034 (34266501)|USER_DEBUG|[6]|DEBUG|AnnualRevenue
+13:13:26.034 (34314007)|USER_DEBUG|[6]|DEBUG|CreatedDate
+13:13:26.034 (34360821)|USER_DEBUG|[6]|DEBUG|OwnerId
+13:13:26.034 (34408694)|USER_DEBUG|[6]|DEBUG|Latest_Household_Gift_Amount__c
+13:13:26.034 (34457178)|USER_DEBUG|[6]|DEBUG|LastViewedDate
+13:13:26.034 (34505425)|USER_DEBUG|[6]|DEBUG|Last_Year_Transaction_Amount__c
+13:13:26.034 (34553995)|USER_DEBUG|[6]|DEBUG|Lifetime_Combined_Credit_Count__c
+13:13:26.034 (34602143)|USER_DEBUG|[6]|DEBUG|Largest_Soft_Credit_Amount__c
+13:13:26.034 (34655026)|USER_DEBUG|[6]|DEBUG|Ownership
+13:13:26.034 (34702980)|USER_DEBUG|[6]|DEBUG|NumberOfEmployees
+13:13:26.034 (34751259)|USER_DEBUG|[6]|DEBUG|YTD_Soft_Credit_Amount__c
+13:13:26.034 (34796795)|USER_DEBUG|[6]|DEBUG|ShippingPostalCode
+13:13:26.034 (34843934)|USER_DEBUG|[6]|DEBUG|Lifetime_Combined_Credit_Amount__c
+13:13:26.034 (34892007)|USER_DEBUG|[6]|DEBUG|Foundation_Type__c
+13:13:26.034 (34939930)|USER_DEBUG|[6]|DEBUG|LastModifiedById
+13:13:26.034 (34988231)|USER_DEBUG|[6]|DEBUG|YTD_Transaction_Amount__c
+13:13:26.035 (35037134)|USER_DEBUG|[6]|DEBUG|Largest_Gift_Amount__c
+13:13:26.035 (35087340)|USER_DEBUG|[6]|DEBUG|Latest_Gift_Date__c
+13:13:26.035 (35143658)|USER_DEBUG|[6]|DEBUG|Secondary_Contact__c
+13:13:26.035 (35193316)|USER_DEBUG|[6]|DEBUG|DO_NOT_PACKAGE_Trigger_Test__c
+13:13:26.035 (35241536)|USER_DEBUG|[6]|DEBUG|PhotoUrl
+13:13:26.035 (35289468)|USER_DEBUG|[6]|DEBUG|Open_Major_Gift__c
+13:13:26.035 (35337377)|USER_DEBUG|[6]|DEBUG|YTD_Combined_Credit_Count__c
+13:13:26.035 (35384906)|USER_DEBUG|[6]|DEBUG|Lifetime_Soft_Credit_Count__c
+13:13:26.035 (35430100)|USER_DEBUG|[6]|DEBUG|BillingState
+13:13:26.035 (35473572)|USER_DEBUG|[6]|DEBUG|BillingLatitude
+13:13:26.035 (35520343)|USER_DEBUG|[6]|DEBUG|Last_Year_Combined_Credit_Amount__c
+13:13:26.035 (35568712)|USER_DEBUG|[6]|DEBUG|Largest_Combined_Credit_Date__c
+13:13:26.035 (35620071)|USER_DEBUG|[6]|DEBUG|First_Soft_Credit_Date__c
+13:13:26.035 (35671270)|USER_DEBUG|[6]|DEBUG|Lifetime_Donation_Amount__c
+13:13:26.035 (35716692)|USER_DEBUG|[6]|DEBUG|ShippingStreet
+13:13:26.035 (35762909)|USER_DEBUG|[6]|DEBUG|Site
+13:13:26.035 (35807255)|USER_DEBUG|[6]|DEBUG|ShippingAddress
+13:13:26.035 (35853371)|USER_DEBUG|[6]|DEBUG|Sic
+13:13:26.035 (35901628)|USER_DEBUG|[6]|DEBUG|Last_Year_Transaction_Count__c
+13:13:26.035 (35946484)|USER_DEBUG|[6]|DEBUG|ShippingCountry
+13:13:26.035 (35994043)|USER_DEBUG|[6]|DEBUG|Last_Combined_Credit_Date__c
+13:13:26.036 (36042827)|USER_DEBUG|[6]|DEBUG|YTD_Donation_Count__c
+13:13:26.036 (36092149)|USER_DEBUG|[6]|DEBUG|YTD_Soft_Credit_Count__c
+13:13:26.036 (36140187)|USER_DEBUG|[6]|DEBUG|Last_Summary_Calculation_Date__c
+13:13:26.036 (36187955)|USER_DEBUG|[6]|DEBUG|First_Gift_Amount__c
+13:13:26.036 (36236112)|USER_DEBUG|[6]|DEBUG|Salutation_Formal_Formula__c
+13:13:26.036 (36291398)|USER_DEBUG|[6]|DEBUG|Head_of_Household__c
+13:13:26.036 (36340324)|USER_DEBUG|[6]|DEBUG|Phone
+13:13:26.036 (36388802)|USER_DEBUG|[6]|DEBUG|Largest_Combined_Credit_Amount__c
+13:13:26.036 (36437013)|USER_DEBUG|[6]|DEBUG|Mailing_Address_Type__c
+13:13:26.036 (36485219)|USER_DEBUG|[6]|DEBUG|Largest_Household_Gift_Date__c
+13:13:26.036 (36533291)|USER_DEBUG|[6]|DEBUG|Type
+13:13:26.036 (36581300)|USER_DEBUG|[6]|DEBUG|Funding_Cycle__c
+13:13:26.036 (36632823)|USER_DEBUG|[6]|DEBUG|LastActivityDate
+13:13:26.036 (36682411)|USER_DEBUG|[6]|DEBUG|External_ID__c
+13:13:26.036 (36730305)|USER_DEBUG|[6]|DEBUG|Household_Soft_Credit__c
+13:13:26.036 (36778179)|USER_DEBUG|[6]|DEBUG|Description
+13:13:26.036 (36833535)|USER_DEBUG|[6]|DEBUG|Primary_Contact__c
+13:13:26.036 (36884066)|USER_DEBUG|[6]|DEBUG|Lifetime_Donation_Count__c
+13:13:26.036 (36932569)|USER_DEBUG|[6]|DEBUG|Salutation__c
+13:13:26.036 (36980003)|USER_DEBUG|[6]|DEBUG|Fax
+13:13:26.037 (37027265)|USER_DEBUG|[6]|DEBUG|TickerSymbol
+13:13:26.037 (37072664)|USER_DEBUG|[6]|DEBUG|ShippingCity
+13:13:26.037 (37116655)|USER_DEBUG|[6]|DEBUG|BillingPostalCode
+13:13:26.037 (37159807)|USER_DEBUG|[6]|DEBUG|ShippingState
+13:13:26.037 (37205860)|USER_DEBUG|[6]|DEBUG|JigsawCompanyId
+13:13:26.037 (37253866)|USER_DEBUG|[6]|DEBUG|Address_Correction_Status__c
+13:13:26.037 (37302322)|USER_DEBUG|[6]|DEBUG|Largest_Soft_Credit_Date__c
+13:13:26.037 (37350205)|USER_DEBUG|[6]|DEBUG|Last_Year_Soft_Credit_Amount__c
+13:13:26.037 (37398299)|USER_DEBUG|[6]|DEBUG|Account_Record_ID__c
+13:13:26.037 (37446046)|USER_DEBUG|[6]|DEBUG|First_Soft_Credit_Amount__c
+13:13:26.037 (37494056)|USER_DEBUG|[6]|DEBUG|Accepts_Unsolicited_Proposals__c
+13:13:26.037 (37541991)|USER_DEBUG|[6]|DEBUG|SicDesc
+13:13:26.037 (37589275)|USER_DEBUG|[6]|DEBUG|AccountSource
+13:13:26.037 (37638844)|USER_DEBUG|[6]|DEBUG|BillingCountry
+13:13:26.037 (37687236)|USER_DEBUG|[6]|DEBUG|Last_Year_Soft_Credit_Count__c
+13:13:26.037 (37735169)|USER_DEBUG|[6]|DEBUG|Last_Soft_Credit_Date__c
+13:13:26.037 (37783082)|USER_DEBUG|[6]|DEBUG|Last_Soft_Credit_Amount__c
+13:13:26.037 (37831075)|USER_DEBUG|[6]|DEBUG|LastModifiedDate
+13:13:26.037 (37878259)|USER_DEBUG|[6]|DEBUG|Id
+13:13:26.037 (37925181)|USER_DEBUG|[6]|DEBUG|LastReferencedDate
+13:13:26.037 (37972870)|USER_DEBUG|[6]|DEBUG|First_Combined_Credit_Date__c
+13:13:26.038 (38021322)|USER_DEBUG|[6]|DEBUG|Last_Combined_Credit_Amount__c
+13:13:26.038 (38070795)|USER_DEBUG|[6]|DEBUG|Name
+13:13:26.038 (38118854)|USER_DEBUG|[6]|DEBUG|YTD_Transaction_Count__c
+13:13:26.038 (38166654)|USER_DEBUG|[6]|DEBUG|Anonymous__c
+13:13:26.038 (38214414)|USER_DEBUG|[6]|DEBUG|AccountNumber
+13:13:26.038 (38262148)|USER_DEBUG|[6]|DEBUG|Salutation_Casual__c
+13:13:26.038 (38317029)|USER_DEBUG|[6]|DEBUG|Contact__c
+13:13:26.038 (38367385)|USER_DEBUG|[6]|DEBUG|YTD_Donation_Amount__c
+13:13:26.038 (38415671)|USER_DEBUG|[6]|DEBUG|Website
+13:13:26.038 (38460393)|USER_DEBUG|[6]|DEBUG|ShippingLongitude
+13:13:26.038 (38506979)|USER_DEBUG|[6]|DEBUG|MasterRecordId
+13:13:26.038 (38554900)|USER_DEBUG|[6]|DEBUG|Salutation_Formal__c
+13:13:26.038 (38603095)|USER_DEBUG|[6]|DEBUG|YTD_Combined_Credit_Amount__c
+13:13:26.038 (38652800)|USER_DEBUG|[6]|DEBUG|BillingStreet
+13:13:26.038 (38700210)|USER_DEBUG|[6]|DEBUG|Active__c
+13:13:26.038 (38748053)|USER_DEBUG|[6]|DEBUG|Lifetime_Soft_Credit_Amount__c
+13:13:26.038 (38795885)|USER_DEBUG|[6]|DEBUG|Last_Year_Combined_Credit_Count__c
+13:13:26.038 (38843911)|USER_DEBUG|[6]|DEBUG|Active_Sustainer__c
+13:13:26.038 (38891321)|USER_DEBUG|[6]|DEBUG|Assets__c
+13:13:26.038 (38938711)|USER_DEBUG|[6]|DEBUG|Largest_Gift_Date__c
+13:13:26.038 (38986104)|USER_DEBUG|[6]|DEBUG|Rating
+13:13:26.351 (39050982)|CUMULATIVE_LIMIT_USAGE
+13:13:26.351|LIMIT_USAGE_FOR_NS|(default)|
+  Number of SOQL queries: 0 out of 100
+  Number of query rows: 0 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 0 out of 150
+  Number of DML rows: 0 out of 10000
+  Maximum CPU time: 0 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+13:13:26.351|CUMULATIVE_LIMIT_USAGE_END
+
+13:13:26.039 (39098928)|CODE_UNIT_FINISHED|execute_anonymous_apex
+13:13:26.040 (40673536)|EXECUTION_FINISHED

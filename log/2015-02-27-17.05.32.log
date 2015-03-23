@@ -1,0 +1,88 @@
+Execute Anonymous
+
+================================
+
+VersionUpgrades.doUpgrades();
+
+================================
+
+31.0 APEX_CODE,DEBUG;APEX_PROFILING,DEBUG;CALLOUT,INFO;DB,INFO;VALIDATION,INFO;WORKFLOW,INFO
+Execute Anonymous: VersionUpgrades.doUpgrades();
+15:05:31.605 (605691003)|EXECUTION_STARTED
+15:05:31.605 (605704514)|CODE_UNIT_STARTED|[EXTERNAL]|execute_anonymous_apex
+15:05:31.612 (612753779)|METHOD_ENTRY|[1]|01po0000003QGLN|VersionUpgrades.VersionUpgrades()
+15:05:31.617 (617529710)|METHOD_ENTRY|[4]|01po0000001fPRj|ProtectedSettingsUtils.ProtectedSettingsUtils()
+15:05:31.617 (617568522)|METHOD_ENTRY|[9]|01po0000001fPRj|ProtectedSettingsUtils.mockProtectedSettingsOrgDefaults()
+15:05:31.617 (617864980)|METHOD_EXIT|[9]|01po0000001fPRj|ProtectedSettingsUtils.mockProtectedSettingsOrgDefaults()
+15:05:31.617 (617882011)|METHOD_EXIT|[4]|ProtectedSettingsUtils
+15:05:31.617 (617894807)|METHOD_ENTRY|[6]|01po0000001fPRj|ProtectedSettingsUtils.getLastUpgradeRun()
+15:05:31.618 (618842350)|METHOD_EXIT|[6]|01po0000001fPRj|ProtectedSettingsUtils.getLastUpgradeRun()
+15:05:31.618 (618862401)|METHOD_EXIT|[1]|VersionUpgrades
+15:05:31.618 (618881596)|METHOD_ENTRY|[1]|01po0000003QGLN|VersionUpgrades.doUpgrades()
+15:05:31.618 (618987047)|USER_DEBUG|[9]|DEBUG|Last upgrade run: 12.11
+15:05:31.619 (619014673)|METHOD_ENTRY|[10]|01po0000003QGLN|VersionUpgrades.doUpgrades12_7_2()
+15:05:31.619 (619055980)|METHOD_EXIT|[10]|01po0000003QGLN|VersionUpgrades.doUpgrades12_7_2()
+15:05:31.619 (619085119)|USER_DEBUG|[11]|DEBUG|Done with 12_7_2
+15:05:31.619 (619103121)|METHOD_ENTRY|[12]|01po0000003QGLN|VersionUpgrades.doUpgrades12_9()
+15:05:31.619 (619133506)|METHOD_ENTRY|[37]|01po0000003QGLN|VersionUpgrades.getLastUpgradeVersionIndex(String)
+15:05:31.625 (625726726)|METHOD_ENTRY|[3]|01po0000000dll9|StringUtils.StringUtils()
+15:05:31.625 (625891741)|METHOD_EXIT|[3]|StringUtils
+15:05:31.625 (625919334)|METHOD_ENTRY|[81]|01po0000000dll9|StringUtils.getStringIndexInList(List<String>, String)
+15:05:31.626 (626104498)|METHOD_EXIT|[81]|01po0000000dll9|StringUtils.getStringIndexInList(List<String>, String)
+15:05:31.626 (626116436)|METHOD_EXIT|[37]|01po0000003QGLN|VersionUpgrades.getLastUpgradeVersionIndex(String)
+15:05:31.626 (626126285)|METHOD_EXIT|[12]|01po0000003QGLN|VersionUpgrades.doUpgrades12_9()
+15:05:31.626 (626155006)|USER_DEBUG|[13]|DEBUG|Done with 12_9
+15:05:31.626 (626172992)|METHOD_ENTRY|[14]|01po0000003QGLN|VersionUpgrades.doUpgrades12_10()
+15:05:31.626 (626200759)|METHOD_ENTRY|[46]|01po0000003QGLN|VersionUpgrades.getLastUpgradeVersionIndex(String)
+15:05:31.626 (626218728)|METHOD_ENTRY|[81]|01po0000000dll9|StringUtils.getStringIndexInList(List<String>, String)
+15:05:31.626 (626316586)|METHOD_EXIT|[81]|01po0000000dll9|StringUtils.getStringIndexInList(List<String>, String)
+15:05:31.626 (626325816)|METHOD_EXIT|[46]|01po0000003QGLN|VersionUpgrades.getLastUpgradeVersionIndex(String)
+15:05:31.626 (626334268)|METHOD_EXIT|[14]|01po0000003QGLN|VersionUpgrades.doUpgrades12_10()
+15:05:31.626 (626359903)|USER_DEBUG|[15]|DEBUG|Done with 12_10
+15:05:31.626 (626376561)|METHOD_ENTRY|[16]|01po0000003QGLN|VersionUpgrades.doUpgrades12_11()
+15:05:31.626 (626402153)|METHOD_ENTRY|[56]|01po0000003QGLN|VersionUpgrades.getLastUpgradeVersionIndex(String)
+15:05:31.626 (626419935)|METHOD_ENTRY|[81]|01po0000000dll9|StringUtils.getStringIndexInList(List<String>, String)
+15:05:31.626 (626515835)|METHOD_EXIT|[81]|01po0000000dll9|StringUtils.getStringIndexInList(List<String>, String)
+15:05:31.626 (626524820)|METHOD_EXIT|[56]|01po0000003QGLN|VersionUpgrades.getLastUpgradeVersionIndex(String)
+15:05:31.626 (626532795)|METHOD_EXIT|[16]|01po0000003QGLN|VersionUpgrades.doUpgrades12_11()
+15:05:31.626 (626557545)|USER_DEBUG|[17]|DEBUG|Done with 12_11
+15:05:31.626 (626574042)|METHOD_ENTRY|[18]|01po0000003QGLN|VersionUpgrades.upsertLastUpgradeRun()
+15:05:31.626 (626604901)|METHOD_ENTRY|[65]|01po0000001fPRj|ProtectedSettingsUtils.setLastUpgradeRun(String)
+15:05:31.626 (626652786)|METHOD_ENTRY|[115]|01po0000000dll9|StringUtils.listContainsString(List<String>, String)
+15:05:31.626 (626927511)|METHOD_EXIT|[115]|01po0000000dll9|StringUtils.listContainsString(List<String>, String)
+15:05:31.626 (626943558)|METHOD_ENTRY|[119]|01po0000001fPRj|ProtectedSettingsUtils.getProtectedSettingsOrgDefaults()
+15:05:31.627 (627082112)|METHOD_EXIT|[119]|01po0000001fPRj|ProtectedSettingsUtils.getProtectedSettingsOrgDefaults()
+15:05:31.627 (627132062)|METHOD_ENTRY|[121]|01po0000001fPRj|ProtectedSettingsUtils.updateSettings(Convio_Settings_Protected__c)
+15:05:31.627 (627216208)|DML_BEGIN|[49]|Op:Upsert|Type:Convio_Settings_Protected__c|Rows:1
+15:05:31.655 (655515688)|DML_END|[49]
+15:05:31.655 (655557595)|METHOD_EXIT|[121]|01po0000001fPRj|ProtectedSettingsUtils.updateSettings(Convio_Settings_Protected__c)
+15:05:31.655 (655570673)|METHOD_EXIT|[65]|01po0000001fPRj|ProtectedSettingsUtils.setLastUpgradeRun(String)
+15:05:31.655 (655578860)|METHOD_EXIT|[18]|01po0000003QGLN|VersionUpgrades.upsertLastUpgradeRun()
+15:05:31.655 (655609078)|METHOD_ENTRY|[19]|01po0000003QGLN|VersionUpgrades.getNeedUpgrades()
+15:05:31.655 (655652635)|METHOD_ENTRY|[77]|01po0000001fPRj|ProtectedSettingsUtils.getLastUpgradeRun()
+15:05:31.671 (671280251)|METHOD_EXIT|[77]|01po0000001fPRj|ProtectedSettingsUtils.getLastUpgradeRun()
+15:05:31.671 (671316119)|METHOD_ENTRY|[77]|01po0000003QGLN|VersionUpgrades.getLastUpgradeVersionIndex(String)
+15:05:31.671 (671346452)|METHOD_ENTRY|[81]|01po0000000dll9|StringUtils.getStringIndexInList(List<String>, String)
+15:05:31.671 (671487486)|METHOD_EXIT|[81]|01po0000000dll9|StringUtils.getStringIndexInList(List<String>, String)
+15:05:31.671 (671497106)|METHOD_EXIT|[77]|01po0000003QGLN|VersionUpgrades.getLastUpgradeVersionIndex(String)
+15:05:31.671 (671525261)|METHOD_EXIT|[19]|01po0000003QGLN|VersionUpgrades.getNeedUpgrades()
+15:05:31.671 (671535020)|METHOD_EXIT|[1]|01po0000003QGLN|VersionUpgrades.doUpgrades()
+15:05:32.594 (676351785)|CUMULATIVE_LIMIT_USAGE
+15:05:32.594|LIMIT_USAGE_FOR_NS|(default)|
+  Number of SOQL queries: 0 out of 100
+  Number of query rows: 0 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 1 out of 150
+  Number of DML rows: 1 out of 10000
+  Maximum CPU time: 0 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+15:05:32.594|CUMULATIVE_LIMIT_USAGE_END
+
+15:05:31.676 (676381299)|CODE_UNIT_FINISHED|execute_anonymous_apex
+15:05:31.677 (677495471)|EXECUTION_FINISHED

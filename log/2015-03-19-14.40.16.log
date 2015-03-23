@@ -1,0 +1,147 @@
+Execute Anonymous
+
+================================
+
+TeamRaiserProgressWidgetController controller = new TeamRaiserProgressWidgetController(null);
+
+
+
+================================
+
+31.0 APEX_CODE,DEBUG;APEX_PROFILING,DEBUG;CALLOUT,INFO;DB,INFO;VALIDATION,INFO;WORKFLOW,INFO
+Execute Anonymous: TeamRaiserProgressWidgetController controller = new TeamRaiserProgressWidgetController(null);
+Execute Anonymous: 
+12:40:16.157 (157644706)|EXECUTION_STARTED
+12:40:16.157 (157656491)|CODE_UNIT_STARTED|[EXTERNAL]|execute_anonymous_apex
+12:40:16.178 (178873729)|METHOD_ENTRY|[1]|01po0000003noZB|TeamRaiserProgressWidgetController.TeamRaiserProgressWidgetController()
+12:40:16.179 (179017668)|METHOD_ENTRY|[6]|01po0000003QZvz|CurrencyFormatter.CurrencyFormatter()
+12:40:16.179 (179033694)|METHOD_EXIT|[6]|CurrencyFormatter
+12:40:16.179 (179079570)|METHOD_ENTRY|[5]|01po0000003QZvz|CurrencyFormatter.currencyOfUser(Boolean)
+12:40:16.180 (180382797)|CONSTRUCTOR_ENTRY|[34]|01po0000003QZvz|<init>(String,String,Boolean)
+12:40:16.180 (180497858)|CONSTRUCTOR_ENTRY|[14]|01po0000003QZvz|<init>(Integer,String)
+12:40:16.180 (180709649)|CONSTRUCTOR_EXIT|[14]|01po0000003QZvz|<init>(Integer,String)
+12:40:16.180 (180730247)|CONSTRUCTOR_ENTRY|[14]|01po0000003QZvz|<init>(Integer,String)
+12:40:16.180 (180771363)|CONSTRUCTOR_EXIT|[14]|01po0000003QZvz|<init>(Integer,String)
+12:40:16.180 (180786503)|CONSTRUCTOR_ENTRY|[14]|01po0000003QZvz|<init>(Integer,String)
+12:40:16.180 (180823175)|CONSTRUCTOR_EXIT|[14]|01po0000003QZvz|<init>(Integer,String)
+12:40:16.180 (180837137)|CONSTRUCTOR_ENTRY|[14]|01po0000003QZvz|<init>(Integer,String)
+12:40:16.180 (180872274)|CONSTRUCTOR_EXIT|[14]|01po0000003QZvz|<init>(Integer,String)
+12:40:16.180 (180922654)|METHOD_ENTRY|[25]|01po0000003QZvz|CurrencyFormatter.getDecimalSeparator()
+12:40:16.181 (181097933)|METHOD_EXIT|[25]|01po0000003QZvz|CurrencyFormatter.getDecimalSeparator()
+12:40:16.181 (181133036)|CONSTRUCTOR_EXIT|[34]|01po0000003QZvz|<init>(String,String,Boolean)
+12:40:16.181 (181141301)|METHOD_EXIT|[5]|01po0000003QZvz|CurrencyFormatter.currencyOfUser(Boolean)
+12:40:16.181 (181155670)|METHOD_EXIT|[1]|TeamRaiserProgressWidgetController
+12:40:16.181 (181323250)|CONSTRUCTOR_ENTRY|[1]|01po0000003noZB|<init>(ApexPages.StandardController)
+12:40:16.181 (181778780)|SOQL_EXECUTE_BEGIN|[24]|Aggregations:0|SELECT Id, Total_Raised__c, Fundraising_Goal__c, Registration_Date__c, Extra_Gift__c, CreatedDate FROM TeamRaiser_Registration__c WHERE Id = :tmpVar1
+12:40:16.193 (193774131)|SOQL_EXECUTE_END|[24]|Rows:1
+12:40:16.194 (194286690)|METHOD_ENTRY|[30]|01po0000003QZvz|CurrencyFormatter.getCurrencySymbol()
+12:40:16.194 (194409746)|METHOD_EXIT|[30]|01po0000003QZvz|CurrencyFormatter.getCurrencySymbol()
+12:40:16.194 (194622113)|METHOD_ENTRY|[35]|01po0000003noZB|TeamRaiserProgressWidgetController.generateData()
+12:40:16.194 (194650295)|METHOD_ENTRY|[78]|01po0000003noZB|TeamRaiserProgressWidgetController.getTotalAmountPerMonth()
+12:40:16.195 (195344900)|SOQL_EXECUTE_BEGIN|[101]|Aggregations:0|SELECT SUM(Amount) totalAmount, CALENDAR_MONTH(CloseDate) month, CALENDAR_YEAR(CloseDate) year, StageName stage FROM Opportunity WHERE (TeamRaiser_Registration__c = :tmpVar1 AND StageName IN ('Received', 'Not Received', 'Refunded')) GROUP BY CALENDAR_YEAR(CloseDate), CALENDAR_MONTH(CloseDate), StageName ORDER BY CALENDAR_YEAR(CloseDate) ASC NULLS FIRST, CALENDAR_MONTH(CloseDate) ASC NULLS FIRST, StageName ASC NULLS FIRST
+12:40:16.235 (235400551)|SOQL_EXECUTE_END|[101]|Rows:1
+12:40:16.235 (235500114)|METHOD_EXIT|[78]|01po0000003noZB|TeamRaiserProgressWidgetController.getTotalAmountPerMonth()
+12:40:16.235 (235535389)|METHOD_ENTRY|[79]|01po0000003noZB|TeamRaiserProgressWidgetController.convertAggregatesToDates(List<AggregateResult>)
+12:40:16.235 (235915043)|METHOD_ENTRY|[178]|01po0000003noZB|TeamRaiserProgressWidgetController.aggregateResultToDate(AggregateResult)
+12:40:16.236 (236091150)|METHOD_EXIT|[178]|01po0000003noZB|TeamRaiserProgressWidgetController.aggregateResultToDate(AggregateResult)
+12:40:16.236 (236140242)|METHOD_EXIT|[79]|01po0000003noZB|TeamRaiserProgressWidgetController.convertAggregatesToDates(List<AggregateResult>)
+12:40:16.236 (236157949)|METHOD_ENTRY|[80]|01po0000003noZB|TeamRaiserProgressWidgetController.getRefundAggregateResults()
+12:40:16.236 (236717914)|SOQL_EXECUTE_BEGIN|[324]|Aggregations:0|SELECT CALENDAR_YEAR(Refund_Date__c) year, CALENDAR_MONTH(Refund_Date__c) month, SUM(Amount) totalAmount, StageName stage FROM Opportunity WHERE (TeamRaiser_Registration__c = :tmpVar1 AND Refund_Date__c != NULL AND StageName = 'Refunded') GROUP BY CALENDAR_YEAR(Refund_Date__c), CALENDAR_MONTH(Refund_Date__c), StageName ORDER BY CALENDAR_YEAR(Refund_Date__c) ASC NULLS FIRST, CALENDAR_MONTH(Refund_Date__c) ASC NULLS FIRST
+12:40:16.242 (242218930)|SOQL_EXECUTE_END|[324]|Rows:1
+12:40:16.242 (242253649)|METHOD_EXIT|[80]|01po0000003noZB|TeamRaiserProgressWidgetController.getRefundAggregateResults()
+12:40:16.242 (242264653)|METHOD_ENTRY|[81]|01po0000003noZB|TeamRaiserProgressWidgetController.convertAggregatesToDates(List<AggregateResult>)
+12:40:16.242 (242334407)|METHOD_ENTRY|[178]|01po0000003noZB|TeamRaiserProgressWidgetController.aggregateResultToDate(AggregateResult)
+12:40:16.242 (242421906)|METHOD_EXIT|[178]|01po0000003noZB|TeamRaiserProgressWidgetController.aggregateResultToDate(AggregateResult)
+12:40:16.242 (242479971)|METHOD_EXIT|[81]|01po0000003noZB|TeamRaiserProgressWidgetController.convertAggregatesToDates(List<AggregateResult>)
+12:40:16.242 (242565022)|METHOD_ENTRY|[84]|01po0000003noZB|TeamRaiserProgressWidgetController.getDisplayMonths(List<Date>)
+12:40:16.242 (242610480)|METHOD_ENTRY|[198]|01po0000003noZB|TeamRaiserProgressWidgetController.getLastGiftDate(List<Date>)
+12:40:16.242 (242691480)|METHOD_EXIT|[198]|01po0000003noZB|TeamRaiserProgressWidgetController.getLastGiftDate(List<Date>)
+12:40:16.243 (243030899)|METHOD_EXIT|[84]|01po0000003noZB|TeamRaiserProgressWidgetController.getDisplayMonths(List<Date>)
+12:40:16.243 (243053604)|METHOD_ENTRY|[90]|01po0000003noZB|TeamRaiserProgressWidgetController.getFormattedMonths(List<Date>)
+12:40:16.243 (243150086)|METHOD_ENTRY|[190]|01po0000003noZB|TeamRaiserProgressWidgetController.getFormattedMonth(Date)
+12:40:16.267 (267003487)|METHOD_ENTRY|[1]|01po0000000dllI|Utils.Utils()
+12:40:16.267 (267840482)|METHOD_EXIT|[1]|Utils
+12:40:16.267 (267875217)|METHOD_ENTRY|[235]|01po0000000dllI|Utils.getMonthStr(Integer)
+12:40:16.267 (267900997)|METHOD_EXIT|[235]|01po0000000dllI|Utils.getMonthStr(Integer)
+12:40:16.267 (267954187)|METHOD_EXIT|[190]|01po0000003noZB|TeamRaiserProgressWidgetController.getFormattedMonth(Date)
+12:40:16.268 (268013311)|METHOD_ENTRY|[190]|01po0000003noZB|TeamRaiserProgressWidgetController.getFormattedMonth(Date)
+12:40:16.268 (268043935)|METHOD_ENTRY|[235]|01po0000000dllI|Utils.getMonthStr(Integer)
+12:40:16.268 (268057354)|METHOD_EXIT|[235]|01po0000000dllI|Utils.getMonthStr(Integer)
+12:40:16.268 (268091237)|METHOD_EXIT|[190]|01po0000003noZB|TeamRaiserProgressWidgetController.getFormattedMonth(Date)
+12:40:16.268 (268132231)|METHOD_ENTRY|[190]|01po0000003noZB|TeamRaiserProgressWidgetController.getFormattedMonth(Date)
+12:40:16.268 (268156719)|METHOD_ENTRY|[235]|01po0000000dllI|Utils.getMonthStr(Integer)
+12:40:16.268 (268169363)|METHOD_EXIT|[235]|01po0000000dllI|Utils.getMonthStr(Integer)
+12:40:16.268 (268196218)|METHOD_EXIT|[190]|01po0000003noZB|TeamRaiserProgressWidgetController.getFormattedMonth(Date)
+12:40:16.268 (268234864)|METHOD_ENTRY|[190]|01po0000003noZB|TeamRaiserProgressWidgetController.getFormattedMonth(Date)
+12:40:16.268 (268257899)|METHOD_ENTRY|[235]|01po0000000dllI|Utils.getMonthStr(Integer)
+12:40:16.268 (268270413)|METHOD_EXIT|[235]|01po0000000dllI|Utils.getMonthStr(Integer)
+12:40:16.268 (268297066)|METHOD_EXIT|[190]|01po0000003noZB|TeamRaiserProgressWidgetController.getFormattedMonth(Date)
+12:40:16.268 (268334702)|METHOD_ENTRY|[190]|01po0000003noZB|TeamRaiserProgressWidgetController.getFormattedMonth(Date)
+12:40:16.268 (268357429)|METHOD_ENTRY|[235]|01po0000000dllI|Utils.getMonthStr(Integer)
+12:40:16.268 (268370269)|METHOD_EXIT|[235]|01po0000000dllI|Utils.getMonthStr(Integer)
+12:40:16.268 (268396490)|METHOD_EXIT|[190]|01po0000003noZB|TeamRaiserProgressWidgetController.getFormattedMonth(Date)
+12:40:16.268 (268434319)|METHOD_ENTRY|[190]|01po0000003noZB|TeamRaiserProgressWidgetController.getFormattedMonth(Date)
+12:40:16.268 (268457204)|METHOD_ENTRY|[235]|01po0000000dllI|Utils.getMonthStr(Integer)
+12:40:16.268 (268470513)|METHOD_EXIT|[235]|01po0000000dllI|Utils.getMonthStr(Integer)
+12:40:16.268 (268496769)|METHOD_EXIT|[190]|01po0000003noZB|TeamRaiserProgressWidgetController.getFormattedMonth(Date)
+12:40:16.268 (268535191)|METHOD_EXIT|[90]|01po0000003noZB|TeamRaiserProgressWidgetController.getFormattedMonths(List<Date>)
+12:40:16.268 (268582123)|METHOD_ENTRY|[91]|01po0000003noZB|TeamRaiserProgressWidgetController.getRefundsPerDisplayMonth(List<AggregateResult>, List<Date>)
+12:40:16.268 (268682573)|METHOD_ENTRY|[139]|01po0000003noZB|TeamRaiserProgressWidgetController.aggregateResultToDate(AggregateResult)
+12:40:16.268 (268783675)|METHOD_EXIT|[139]|01po0000003noZB|TeamRaiserProgressWidgetController.aggregateResultToDate(AggregateResult)
+12:40:16.268 (268889436)|METHOD_ENTRY|[141]|01po0000003noZB|TeamRaiserProgressWidgetController.getAmountRaisedByDisplayMonth(Map<Date,Decimal>, List<Date>)
+12:40:16.269 (269054127)|METHOD_ENTRY|[295]|01po0000003noZB|TeamRaiserProgressWidgetController.combineAndSort(Set<Date>, List<Date>)
+12:40:16.269 (269227830)|METHOD_EXIT|[295]|01po0000003noZB|TeamRaiserProgressWidgetController.combineAndSort(Set<Date>, List<Date>)
+12:40:16.270 (270034456)|METHOD_EXIT|[141]|01po0000003noZB|TeamRaiserProgressWidgetController.getAmountRaisedByDisplayMonth(Map<Date,Decimal>, List<Date>)
+12:40:16.270 (270043646)|METHOD_EXIT|[91]|01po0000003noZB|TeamRaiserProgressWidgetController.getRefundsPerDisplayMonth(List<AggregateResult>, List<Date>)
+12:40:16.270 (270150673)|USER_DEBUG|[92]|DEBUG|refunds: (0.00, 0.00, 0.00, 0.00, 100.00, 100.00)
+12:40:16.270 (270173500)|METHOD_ENTRY|[93]|01po0000003noZB|TeamRaiserProgressWidgetController.getcommittedAmountsByDisplayMonth(List<AggregateResult>, List<Decimal>)
+12:40:16.270 (270222590)|METHOD_ENTRY|[115]|01po0000003noZB|TeamRaiserProgressWidgetController.formMapByStage(String, List<AggregateResult>)
+12:40:16.270 (270285188)|METHOD_ENTRY|[161]|01po0000003noZB|TeamRaiserProgressWidgetController.aggregateResultToDate(AggregateResult)
+12:40:16.270 (270372970)|METHOD_EXIT|[161]|01po0000003noZB|TeamRaiserProgressWidgetController.aggregateResultToDate(AggregateResult)
+12:40:16.270 (270435141)|METHOD_ENTRY|[164]|01po0000003noZB|TeamRaiserProgressWidgetController.sameStage(AggregateResult, String)
+12:40:16.270 (270512550)|METHOD_EXIT|[164]|01po0000003noZB|TeamRaiserProgressWidgetController.sameStage(AggregateResult, String)
+12:40:16.270 (270521755)|METHOD_ENTRY|[164]|01po0000003noZB|TeamRaiserProgressWidgetController.sameStage(AggregateResult, String)
+12:40:16.270 (270566312)|METHOD_EXIT|[164]|01po0000003noZB|TeamRaiserProgressWidgetController.sameStage(AggregateResult, String)
+12:40:16.270 (270655152)|METHOD_EXIT|[115]|01po0000003noZB|TeamRaiserProgressWidgetController.formMapByStage(String, List<AggregateResult>)
+12:40:16.270 (270673968)|METHOD_ENTRY|[116]|01po0000003noZB|TeamRaiserProgressWidgetController.includeAdditionalGift(List<Date>, Map<Date,Decimal>)
+12:40:16.270 (270837124)|METHOD_EXIT|[116]|01po0000003noZB|TeamRaiserProgressWidgetController.includeAdditionalGift(List<Date>, Map<Date,Decimal>)
+12:40:16.270 (270847843)|METHOD_ENTRY|[117]|01po0000003noZB|TeamRaiserProgressWidgetController.getAmountRaisedByDisplayMonth(Map<Date,Decimal>, List<Date>)
+12:40:16.270 (270935516)|METHOD_ENTRY|[295]|01po0000003noZB|TeamRaiserProgressWidgetController.combineAndSort(Set<Date>, List<Date>)
+12:40:16.271 (271029696)|METHOD_EXIT|[295]|01po0000003noZB|TeamRaiserProgressWidgetController.combineAndSort(Set<Date>, List<Date>)
+12:40:16.271 (271787176)|METHOD_EXIT|[117]|01po0000003noZB|TeamRaiserProgressWidgetController.getAmountRaisedByDisplayMonth(Map<Date,Decimal>, List<Date>)
+12:40:16.271 (271813694)|METHOD_ENTRY|[118]|01po0000003noZB|TeamRaiserProgressWidgetController.subtractRefundsFromList(List<Decimal>, List<Decimal>)
+12:40:16.272 (272314979)|METHOD_EXIT|[118]|01po0000003noZB|TeamRaiserProgressWidgetController.subtractRefundsFromList(List<Decimal>, List<Decimal>)
+12:40:16.272 (272362869)|METHOD_EXIT|[93]|01po0000003noZB|TeamRaiserProgressWidgetController.getcommittedAmountsByDisplayMonth(List<AggregateResult>, List<Decimal>)
+12:40:16.272 (272387259)|METHOD_ENTRY|[94]|01po0000003noZB|TeamRaiserProgressWidgetController.getUncommittedAmountsByDisplayMonth(List<AggregateResult>, List<Decimal>)
+12:40:16.272 (272465806)|METHOD_ENTRY|[127]|01po0000003noZB|TeamRaiserProgressWidgetController.sameStage(AggregateResult, String)
+12:40:16.272 (272524266)|METHOD_EXIT|[127]|01po0000003noZB|TeamRaiserProgressWidgetController.sameStage(AggregateResult, String)
+12:40:16.272 (272549329)|METHOD_ENTRY|[131]|01po0000003noZB|TeamRaiserProgressWidgetController.getAmountRaisedByDisplayMonth(Map<Date,Decimal>, List<Date>)
+12:40:16.272 (272623493)|METHOD_ENTRY|[295]|01po0000003noZB|TeamRaiserProgressWidgetController.combineAndSort(Set<Date>, List<Date>)
+12:40:16.272 (272714177)|METHOD_EXIT|[295]|01po0000003noZB|TeamRaiserProgressWidgetController.combineAndSort(Set<Date>, List<Date>)
+12:40:16.273 (273361095)|METHOD_EXIT|[131]|01po0000003noZB|TeamRaiserProgressWidgetController.getAmountRaisedByDisplayMonth(Map<Date,Decimal>, List<Date>)
+12:40:16.273 (273409754)|METHOD_EXIT|[94]|01po0000003noZB|TeamRaiserProgressWidgetController.getUncommittedAmountsByDisplayMonth(List<AggregateResult>, List<Decimal>)
+12:40:16.273 (273467451)|METHOD_ENTRY|[95]|01po0000003noZB|TeamRaiserProgressWidgetController.getAllAmountsByDisplayMonth(List<Decimal>, List<Decimal>, List<Decimal>)
+12:40:16.273 (273953665)|METHOD_ENTRY|[151]|01po0000003noZB|TeamRaiserProgressWidgetController.subtractRefundsFromList(List<Decimal>, List<Decimal>)
+12:40:16.274 (274401999)|METHOD_EXIT|[151]|01po0000003noZB|TeamRaiserProgressWidgetController.subtractRefundsFromList(List<Decimal>, List<Decimal>)
+12:40:16.274 (274448354)|METHOD_EXIT|[95]|01po0000003noZB|TeamRaiserProgressWidgetController.getAllAmountsByDisplayMonth(List<Decimal>, List<Decimal>, List<Decimal>)
+12:40:16.274 (274476961)|METHOD_EXIT|[35]|01po0000003noZB|TeamRaiserProgressWidgetController.generateData()
+12:40:16.274 (274490417)|CONSTRUCTOR_EXIT|[1]|01po0000003noZB|<init>(ApexPages.StandardController)
+12:40:16.251 (274544787)|CUMULATIVE_LIMIT_USAGE
+12:40:16.251|LIMIT_USAGE_FOR_NS|(default)|
+  Number of SOQL queries: 3 out of 100
+  Number of query rows: 3 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 0 out of 150
+  Number of DML rows: 0 out of 10000
+  Maximum CPU time: 0 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+12:40:16.251|CUMULATIVE_LIMIT_USAGE_END
+
+12:40:16.274 (274572069)|CODE_UNIT_FINISHED|execute_anonymous_apex
+12:40:16.276 (276580294)|EXECUTION_FINISHED

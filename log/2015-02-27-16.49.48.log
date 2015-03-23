@@ -1,0 +1,38 @@
+Execute Anonymous
+
+================================
+
+System.debug(ProtectedSettingsUtils.getLastUpgradeRun());
+
+================================
+
+31.0 APEX_CODE,DEBUG;APEX_PROFILING,DEBUG;CALLOUT,INFO;DB,INFO;VALIDATION,INFO;WORKFLOW,INFO
+Execute Anonymous: System.debug(ProtectedSettingsUtils.getLastUpgradeRun());
+14:49:47.854 (1854529549)|EXECUTION_STARTED
+14:49:47.854 (1854548499)|CODE_UNIT_STARTED|[EXTERNAL]|execute_anonymous_apex
+14:49:47.868 (1868731944)|METHOD_ENTRY|[4]|01po0000001fPRj|ProtectedSettingsUtils.ProtectedSettingsUtils()
+14:49:47.868 (1868835757)|METHOD_ENTRY|[9]|01po0000001fPRj|ProtectedSettingsUtils.mockProtectedSettingsOrgDefaults()
+14:49:47.869 (1869504677)|METHOD_EXIT|[9]|01po0000001fPRj|ProtectedSettingsUtils.mockProtectedSettingsOrgDefaults()
+14:49:47.869 (1869546151)|METHOD_EXIT|[4]|ProtectedSettingsUtils
+14:49:47.869 (1869577062)|METHOD_ENTRY|[1]|01po0000001fPRj|ProtectedSettingsUtils.getLastUpgradeRun()
+14:49:47.871 (1871766838)|METHOD_EXIT|[1]|01po0000001fPRj|ProtectedSettingsUtils.getLastUpgradeRun()
+14:49:47.871 (1871837546)|USER_DEBUG|[1]|DEBUG|12.9
+14:49:48.661 (1871919562)|CUMULATIVE_LIMIT_USAGE
+14:49:48.661|LIMIT_USAGE_FOR_NS|(default)|
+  Number of SOQL queries: 0 out of 100
+  Number of query rows: 0 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 0 out of 150
+  Number of DML rows: 0 out of 10000
+  Maximum CPU time: 0 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+14:49:48.661|CUMULATIVE_LIMIT_USAGE_END
+
+14:49:47.871 (1871964893)|CODE_UNIT_FINISHED|execute_anonymous_apex
+14:49:47.873 (1873648994)|EXECUTION_FINISHED

@@ -1,0 +1,88 @@
+Execute Anonymous
+
+================================
+
+
+Map<Date, Decimal> amountsByMonthMap = new Map<Date, Decimal>{
+    Date.newInstance(2014, 1,1) => 100.00,
+    Date.newInstance(2014, 2,1) => 100.00,
+    Date.newInstance(2015, 3,1) => 100.00,
+    Date.newInstance(2015, 4,1) => 100.00
+};
+
+List<Date> displayMonths = new List<Date>{
+    Date.newInstance(2015, 1,1),
+    Date.newInstance(2015, 2,1),
+    Date.newInstance(2015, 3,1),
+    Date.newInstance(2015, 4,1),
+    Date.newInstance(2015, 5,1),
+    Date.newInstance(2015, 6,1)
+};
+
+// the lenght of this list will be from min(sortedKeySet[0], displayMonths[0])
+// to max (sortedKeySet[sortedKeySet.size()-1], displayMonths[displayMonths.size()-1]
+Set<Date> combinedList = new Set<Date>();
+
+combinedList.addAll(amountsByMonthMap.keyset());
+combinedList.addAll(displayMonths);
+
+List<Date> combined = new List<Date>();
+combined.addAll(combinedList);
+combined.sort();
+
+System.debug('combined: ' + combined);
+
+================================
+
+31.0 APEX_CODE,DEBUG;APEX_PROFILING,DEBUG;CALLOUT,INFO;DB,INFO;VALIDATION,INFO;WORKFLOW,INFO
+Execute Anonymous: 
+Execute Anonymous: Map<Date, Decimal> amountsByMonthMap = new Map<Date, Decimal>{
+Execute Anonymous:     Date.newInstance(2014, 1,1) => 100.00,
+Execute Anonymous:     Date.newInstance(2014, 2,1) => 100.00,
+Execute Anonymous:     Date.newInstance(2015, 3,1) => 100.00,
+Execute Anonymous:     Date.newInstance(2015, 4,1) => 100.00
+Execute Anonymous: };
+Execute Anonymous: 
+Execute Anonymous: List<Date> displayMonths = new List<Date>{
+Execute Anonymous:     Date.newInstance(2015, 1,1),
+Execute Anonymous:     Date.newInstance(2015, 2,1),
+Execute Anonymous:     Date.newInstance(2015, 3,1),
+Execute Anonymous:     Date.newInstance(2015, 4,1),
+Execute Anonymous:     Date.newInstance(2015, 5,1),
+Execute Anonymous:     Date.newInstance(2015, 6,1)
+Execute Anonymous: };
+Execute Anonymous: 
+Execute Anonymous: // the lenght of this list will be from min(sortedKeySet[0], displayMonths[0])
+Execute Anonymous: // to max (sortedKeySet[sortedKeySet.size()-1], displayMonths[displayMonths.size()-1]
+Execute Anonymous: Set<Date> combinedList = new Set<Date>();
+Execute Anonymous: 
+Execute Anonymous: combinedList.addAll(amountsByMonthMap.keyset());
+Execute Anonymous: combinedList.addAll(displayMonths);
+Execute Anonymous: 
+Execute Anonymous: List<Date> combined = new List<Date>();
+Execute Anonymous: combined.addAll(combinedList);
+Execute Anonymous: combined.sort();
+Execute Anonymous: 
+Execute Anonymous: System.debug('combined: ' + combined);
+06:28:39.037 (37376854)|EXECUTION_STARTED
+06:28:39.037 (37386296)|CODE_UNIT_STARTED|[EXTERNAL]|execute_anonymous_apex
+06:28:39.038 (38787371)|USER_DEBUG|[29]|DEBUG|combined: (2014-01-01 00:00:00, 2014-02-01 00:00:00, 2015-01-01 00:00:00, 2015-02-01 00:00:00, 2015-03-01 00:00:00, 2015-04-01 00:00:00, 2015-05-01 00:00:00, 2015-06-01 00:00:00)
+06:28:39.801 (38833765)|CUMULATIVE_LIMIT_USAGE
+06:28:39.801|LIMIT_USAGE_FOR_NS|(default)|
+  Number of SOQL queries: 0 out of 100
+  Number of query rows: 0 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 0 out of 150
+  Number of DML rows: 0 out of 10000
+  Maximum CPU time: 0 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+06:28:39.801|CUMULATIVE_LIMIT_USAGE_END
+
+06:28:39.038 (38868442)|CODE_UNIT_FINISHED|execute_anonymous_apex
+06:28:39.040 (40099226)|EXECUTION_FINISHED

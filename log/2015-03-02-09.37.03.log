@@ -1,0 +1,36 @@
+Execute Anonymous
+
+================================
+
+Map<String, String> fieldMap = new Map<String,String>{'something'=>'somethinga'};
+
+System.debug(fieldMap.get('what'));
+
+================================
+
+31.0 APEX_CODE,DEBUG;APEX_PROFILING,DEBUG;CALLOUT,INFO;DB,INFO;VALIDATION,INFO;WORKFLOW,INFO
+Execute Anonymous: Map<String, String> fieldMap = new Map<String,String>{'something'=>'somethinga'};
+Execute Anonymous: 
+Execute Anonymous: System.debug(fieldMap.get('what'));
+07:37:03.043 (43575940)|EXECUTION_STARTED
+07:37:03.043 (43589484)|CODE_UNIT_STARTED|[EXTERNAL]|execute_anonymous_apex
+07:37:03.044 (44268039)|USER_DEBUG|[3]|DEBUG|null
+07:37:03.360 (44301580)|CUMULATIVE_LIMIT_USAGE
+07:37:03.360|LIMIT_USAGE_FOR_NS|(default)|
+  Number of SOQL queries: 0 out of 100
+  Number of query rows: 0 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 0 out of 150
+  Number of DML rows: 0 out of 10000
+  Maximum CPU time: 0 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+07:37:03.360|CUMULATIVE_LIMIT_USAGE_END
+
+07:37:03.044 (44327085)|CODE_UNIT_FINISHED|execute_anonymous_apex
+07:37:03.045 (45671952)|EXECUTION_FINISHED

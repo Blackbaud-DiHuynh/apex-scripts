@@ -1,0 +1,56 @@
+Execute Anonymous
+
+================================
+
+Id trRegId = 'a0jo0000001I18l';
+List<AggregateResult> results = 
+			[SELECT SUM(Amount) amountTotal, 
+				calendar_month(CloseDate) month, 
+				calendar_year(CloseDate) year, 
+				StageName stage
+			FROM Opportunity 
+			WHERE TeamRaiser_Registration__c=:trRegId
+			GROUP BY calendar_year(CloseDate) , calendar_month(CloseDate), StageName
+			ORDER BY calendar_year(CloseDate), calendar_month(CloseDate)];
+			
+System.debug(results);
+
+================================
+
+31.0 APEX_CODE,DEBUG;APEX_PROFILING,DEBUG;CALLOUT,INFO;DB,INFO;VALIDATION,INFO;WORKFLOW,INFO
+Execute Anonymous: Id trRegId = 'a0jo0000001I18l';
+Execute Anonymous: List<AggregateResult> results = 
+Execute Anonymous: 			[SELECT SUM(Amount) amountTotal, 
+Execute Anonymous: 				calendar_month(CloseDate) month, 
+Execute Anonymous: 				calendar_year(CloseDate) year, 
+Execute Anonymous: 				StageName stage
+Execute Anonymous: 			FROM Opportunity 
+Execute Anonymous: 			WHERE TeamRaiser_Registration__c=:trRegId
+Execute Anonymous: 			GROUP BY calendar_year(CloseDate) , calendar_month(CloseDate), StageName
+Execute Anonymous: 			ORDER BY calendar_year(CloseDate), calendar_month(CloseDate)];
+Execute Anonymous: 			
+Execute Anonymous: System.debug(results);
+07:01:46.037 (37454169)|EXECUTION_STARTED
+07:01:46.037 (37463659)|CODE_UNIT_STARTED|[EXTERNAL]|execute_anonymous_apex
+07:01:46.038 (38647335)|SOQL_EXECUTE_BEGIN|[2]|Aggregations:0|SELECT SUM(Amount) amountTotal, CALENDAR_MONTH(CloseDate) month, CALENDAR_YEAR(CloseDate) year, StageName stage FROM Opportunity WHERE TeamRaiser_Registration__c = :tmpVar1 GROUP BY CALENDAR_YEAR(CloseDate), CALENDAR_MONTH(CloseDate), StageName ORDER BY CALENDAR_YEAR(CloseDate) ASC NULLS FIRST, CALENDAR_MONTH(CloseDate) ASC NULLS FIRST
+07:01:46.106 (106907141)|SOQL_EXECUTE_END|[2]|Rows:6
+07:01:46.107 (107094400)|USER_DEBUG|[12]|DEBUG|(AggregateResult:{amountTotal=8956.0, month=1, year=2014, stage=Not Received}, AggregateResult:{amountTotal=134.0, month=3, year=2014, stage=Received}, AggregateResult:{amountTotal=1114.0, month=3, year=2014, stage=Not Received}, AggregateResult:{amountTotal=123.0, month=8, year=2014, stage=Not Received}, AggregateResult:{amountTotal=86.0, month=12, year=2014, stage=Not Received}, AggregateResult:{amountTotal=1544.0, month=3, year=2015, stage=Received})
+07:01:46.733 (107152238)|CUMULATIVE_LIMIT_USAGE
+07:01:46.733|LIMIT_USAGE_FOR_NS|(default)|
+  Number of SOQL queries: 1 out of 100
+  Number of query rows: 8 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 0 out of 150
+  Number of DML rows: 0 out of 10000
+  Maximum CPU time: 0 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+07:01:46.733|CUMULATIVE_LIMIT_USAGE_END
+
+07:01:46.107 (107179546)|CODE_UNIT_FINISHED|execute_anonymous_apex
+07:01:46.108 (108734431)|EXECUTION_FINISHED

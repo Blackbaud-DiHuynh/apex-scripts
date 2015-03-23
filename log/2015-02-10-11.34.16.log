@@ -1,0 +1,77 @@
+Execute Anonymous
+
+================================
+
+RecordType[] recTypes = [select Id, Name, DeveloperName, SobjectType, Description from RecordType where IsActive=true];
+
+
+for (RecordType r : recTypes){
+    System.debug('r ' + r.Name + ' ' + r.DeveloperName);
+}
+
+================================
+
+31.0 APEX_CODE,DEBUG;APEX_PROFILING,DEBUG;CALLOUT,INFO;DB,INFO;VALIDATION,INFO;WORKFLOW,INFO
+Execute Anonymous: RecordType[] recTypes = [select Id, Name, DeveloperName, SobjectType, Description from RecordType where IsActive=true];
+Execute Anonymous: 
+Execute Anonymous: 
+Execute Anonymous: for (RecordType r : recTypes){
+Execute Anonymous:     System.debug('r ' + r.Name + ' ' + r.DeveloperName);
+Execute Anonymous: }
+09:34:15.037 (37960554)|EXECUTION_STARTED
+09:34:15.037 (37971302)|CODE_UNIT_STARTED|[EXTERNAL]|execute_anonymous_apex
+09:34:15.038 (38848179)|SOQL_EXECUTE_BEGIN|[1]|Aggregations:0|SELECT Id, Name, DeveloperName, SobjectType, Description FROM RecordType WHERE IsActive = TRUE
+09:34:15.058 (58061775)|SOQL_EXECUTE_END|[1]|Rows:34
+09:34:15.058 (58672502)|USER_DEBUG|[5]|DEBUG|r Gala Event Attendee Gala_Event_Attendee
+09:34:15.058 (58727339)|USER_DEBUG|[5]|DEBUG|r Golf Event Attendee Golf_Event_Attendee
+09:34:15.058 (58771187)|USER_DEBUG|[5]|DEBUG|r Gala Event Gala_Event
+09:34:15.058 (58812851)|USER_DEBUG|[5]|DEBUG|r Golf Event Golf_Event
+09:34:15.058 (58854494)|USER_DEBUG|[5]|DEBUG|r Attendee Attendee
+09:34:15.058 (58895256)|USER_DEBUG|[5]|DEBUG|r Sponsor Sponsor
+09:34:15.058 (58936015)|USER_DEBUG|[5]|DEBUG|r Attendee Level Attendee_Level
+09:34:15.058 (58976768)|USER_DEBUG|[5]|DEBUG|r Sponsor Level Sponsor_Level
+09:34:15.059 (59017312)|USER_DEBUG|[5]|DEBUG|r In-kind Gift Type InkindGiftType
+09:34:15.059 (59060147)|USER_DEBUG|[5]|DEBUG|r Other Asset OtherAsset
+09:34:15.059 (59100924)|USER_DEBUG|[5]|DEBUG|r Stock Asset StockAsset
+09:34:15.059 (59141034)|USER_DEBUG|[5]|DEBUG|r Additional Address Additional_Address
+09:34:15.059 (59181751)|USER_DEBUG|[5]|DEBUG|r Historical Address Historical_Address
+09:34:15.059 (59229038)|USER_DEBUG|[5]|DEBUG|r Seasonal Address Seasonal_Address
+09:34:15.059 (59270429)|USER_DEBUG|[5]|DEBUG|r Additional Address DEPRECATED AdditionalAddress
+09:34:15.059 (59311273)|USER_DEBUG|[5]|DEBUG|r Historical Address DEPRECATED HistoricalAddress
+09:34:15.059 (59351718)|USER_DEBUG|[5]|DEBUG|r Seasonal Address DEPRECATED SeasonalAddress
+09:34:15.059 (59392790)|USER_DEBUG|[5]|DEBUG|r Pledge Installment PledgeInstallment
+09:34:15.059 (59433671)|USER_DEBUG|[5]|DEBUG|r Single Donation SingleDonation
+09:34:15.059 (59474247)|USER_DEBUG|[5]|DEBUG|r Planned Gift PlannedGift
+09:34:15.059 (59514811)|USER_DEBUG|[5]|DEBUG|r Major Gift MajorGift
+09:34:15.059 (59555005)|USER_DEBUG|[5]|DEBUG|r Grant Grant
+09:34:15.059 (59595303)|USER_DEBUG|[5]|DEBUG|r Recurring Donation RecurringDonation
+09:34:15.059 (59635676)|USER_DEBUG|[5]|DEBUG|r Organization Contact OrganizationContact
+09:34:15.059 (59676063)|USER_DEBUG|[5]|DEBUG|r Organization Donor Proxy OrganizationDonorProxy
+09:34:15.059 (59716437)|USER_DEBUG|[5]|DEBUG|r Household Household
+09:34:15.059 (59756933)|USER_DEBUG|[5]|DEBUG|r Organization Organization
+09:34:15.059 (59797252)|USER_DEBUG|[5]|DEBUG|r Household Contact HouseholdContact
+09:34:15.059 (59837910)|USER_DEBUG|[5]|DEBUG|r Contact-Contact Relationship ContactContactRelationship
+09:34:15.059 (59878537)|USER_DEBUG|[5]|DEBUG|r Contact-Account Relationship ContactAccountRelationship
+09:34:15.059 (59919383)|USER_DEBUG|[5]|DEBUG|r Account-Contact Relationship AccountContactRelationship
+09:34:15.059 (59959331)|USER_DEBUG|[5]|DEBUG|r Account-Account Relationship AccountAccountRelationship
+09:34:15.059 (59999771)|USER_DEBUG|[5]|DEBUG|r Account Relationship AccountRelationship
+09:34:15.060 (60040106)|USER_DEBUG|[5]|DEBUG|r Contact Relationship ContactRelationship
+09:34:15.984 (60103549)|CUMULATIVE_LIMIT_USAGE
+09:34:15.984|LIMIT_USAGE_FOR_NS|(default)|
+  Number of SOQL queries: 1 out of 100
+  Number of query rows: 34 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 0 out of 150
+  Number of DML rows: 0 out of 10000
+  Maximum CPU time: 0 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+09:34:15.984|CUMULATIVE_LIMIT_USAGE_END
+
+09:34:15.060 (60145051)|CODE_UNIT_FINISHED|execute_anonymous_apex
+09:34:15.061 (61426372)|EXECUTION_FINISHED

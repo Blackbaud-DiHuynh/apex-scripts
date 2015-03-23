@@ -1,0 +1,64 @@
+getAllFieldsForSObject.cls
+
+================================
+
+//for the Account object, you can replact that with any object you have, standard or custom
+Schema.DescribeSObjectResult a_desc = Volunteer_Job__c.sObjectType.getDescribe(); 
+Map<String, Schema.SObjectField> a_fields = a_desc.fields.getMap();
+
+for(Schema.sObjectField fld:a_fields.values()){ 
+     System.debug(fld);
+}
+
+
+================================
+
+31.0 APEX_CODE,DEBUG;APEX_PROFILING,DEBUG;CALLOUT,INFO;DB,INFO;VALIDATION,INFO;WORKFLOW,INFO
+Execute Anonymous: //for the Account object, you can replact that with any object you have, standard or custom
+Execute Anonymous: Schema.DescribeSObjectResult a_desc = Volunteer_Job__c.sObjectType.getDescribe(); 
+Execute Anonymous: Map<String, Schema.SObjectField> a_fields = a_desc.fields.getMap();
+Execute Anonymous: 
+Execute Anonymous: for(Schema.sObjectField fld:a_fields.values()){ 
+Execute Anonymous:      System.debug(fld);
+Execute Anonymous: }
+14:04:38.038 (38844957)|EXECUTION_STARTED
+14:04:38.038 (38854148)|CODE_UNIT_STARTED|[EXTERNAL]|execute_anonymous_apex
+14:04:38.041 (41979779)|USER_DEBUG|[6]|DEBUG|CreatedDate
+14:04:38.042 (42035321)|USER_DEBUG|[6]|DEBUG|Zip_Postal_Code__c
+14:04:38.042 (42082014)|USER_DEBUG|[6]|DEBUG|OwnerId
+14:04:38.042 (42124886)|USER_DEBUG|[6]|DEBUG|CreatedById
+14:04:38.042 (42167215)|USER_DEBUG|[6]|DEBUG|LastActivityDate
+14:04:38.042 (42209441)|USER_DEBUG|[6]|DEBUG|LastViewedDate
+14:04:38.042 (42251227)|USER_DEBUG|[6]|DEBUG|LastModifiedDate
+14:04:38.042 (42292599)|USER_DEBUG|[6]|DEBUG|Id
+14:04:38.042 (42334552)|USER_DEBUG|[6]|DEBUG|LastReferencedDate
+14:04:38.042 (42385674)|USER_DEBUG|[6]|DEBUG|Job_Coordinator__c
+14:04:38.042 (42431028)|USER_DEBUG|[6]|DEBUG|Street_Location__c
+14:04:38.042 (42473314)|USER_DEBUG|[6]|DEBUG|Description__c
+14:04:38.042 (42515764)|USER_DEBUG|[6]|DEBUG|IsDeleted
+14:04:38.042 (42557361)|USER_DEBUG|[6]|DEBUG|Name
+14:04:38.042 (42599245)|USER_DEBUG|[6]|DEBUG|Vol_Job_Record_ID__c
+14:04:38.042 (42641443)|USER_DEBUG|[6]|DEBUG|Indicate_Contacts_Attended_by_Default__c
+14:04:38.042 (42683696)|USER_DEBUG|[6]|DEBUG|State_Province__c
+14:04:38.042 (42725389)|USER_DEBUG|[6]|DEBUG|City__c
+14:04:38.042 (42766922)|USER_DEBUG|[6]|DEBUG|SystemModstamp
+14:04:38.042 (42808692)|USER_DEBUG|[6]|DEBUG|LastModifiedById
+14:04:38.140 (42854095)|CUMULATIVE_LIMIT_USAGE
+14:04:38.140|LIMIT_USAGE_FOR_NS|(default)|
+  Number of SOQL queries: 0 out of 100
+  Number of query rows: 0 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 0 out of 150
+  Number of DML rows: 0 out of 10000
+  Maximum CPU time: 0 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+14:04:38.140|CUMULATIVE_LIMIT_USAGE_END
+
+14:04:38.042 (42873958)|CODE_UNIT_FINISHED|execute_anonymous_apex
+14:04:38.043 (43980952)|EXECUTION_FINISHED

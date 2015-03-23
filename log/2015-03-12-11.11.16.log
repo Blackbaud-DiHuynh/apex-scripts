@@ -1,0 +1,84 @@
+Execute Anonymous
+
+================================
+
+TeamRaiserProgressWidgetController controller = new TeamRaiserProgressWidgetController();
+
+System.debug(controller.getMonthsToDisplay(Date.newInstance(2014,12,1)));
+
+================================
+
+31.0 APEX_CODE,DEBUG;APEX_PROFILING,DEBUG;CALLOUT,INFO;DB,INFO;VALIDATION,INFO;WORKFLOW,INFO
+Execute Anonymous: TeamRaiserProgressWidgetController controller = new TeamRaiserProgressWidgetController();
+Execute Anonymous: 
+Execute Anonymous: System.debug(controller.getMonthsToDisplay(Date.newInstance(2014,12,1)));
+09:11:15.665 (665001980)|EXECUTION_STARTED
+09:11:15.665 (665036421)|CODE_UNIT_STARTED|[EXTERNAL]|execute_anonymous_apex
+09:11:15.767 (767970049)|METHOD_ENTRY|[1]|01po0000003noZB|TeamRaiserProgressWidgetController.TeamRaiserProgressWidgetController()
+09:11:15.768 (768199422)|METHOD_ENTRY|[6]|01po0000003QZvz|CurrencyFormatter.CurrencyFormatter()
+09:11:15.768 (768231779)|METHOD_EXIT|[6]|CurrencyFormatter
+09:11:15.768 (768312308)|METHOD_ENTRY|[5]|01po0000003QZvz|CurrencyFormatter.currencyOfUser(Boolean)
+09:11:15.771 (771114147)|CONSTRUCTOR_ENTRY|[34]|01po0000003QZvz|<init>(String,String,Boolean)
+09:11:15.771 (771381436)|CONSTRUCTOR_ENTRY|[14]|01po0000003QZvz|<init>(Integer,String)
+09:11:15.771 (771945561)|CONSTRUCTOR_EXIT|[14]|01po0000003QZvz|<init>(Integer,String)
+09:11:15.771 (771999135)|CONSTRUCTOR_ENTRY|[14]|01po0000003QZvz|<init>(Integer,String)
+09:11:15.772 (772104308)|CONSTRUCTOR_EXIT|[14]|01po0000003QZvz|<init>(Integer,String)
+09:11:15.772 (772145509)|CONSTRUCTOR_ENTRY|[14]|01po0000003QZvz|<init>(Integer,String)
+09:11:15.772 (772237458)|CONSTRUCTOR_EXIT|[14]|01po0000003QZvz|<init>(Integer,String)
+09:11:15.772 (772273695)|CONSTRUCTOR_ENTRY|[14]|01po0000003QZvz|<init>(Integer,String)
+09:11:15.772 (772380318)|CONSTRUCTOR_EXIT|[14]|01po0000003QZvz|<init>(Integer,String)
+09:11:15.772 (772510671)|METHOD_ENTRY|[25]|01po0000003QZvz|CurrencyFormatter.getDecimalSeparator()
+09:11:15.773 (773031464)|METHOD_EXIT|[25]|01po0000003QZvz|CurrencyFormatter.getDecimalSeparator()
+09:11:15.773 (773105796)|CONSTRUCTOR_EXIT|[34]|01po0000003QZvz|<init>(String,String,Boolean)
+09:11:15.773 (773127293)|METHOD_EXIT|[5]|01po0000003QZvz|CurrencyFormatter.currencyOfUser(Boolean)
+09:11:15.773 (773155567)|METHOD_EXIT|[1]|TeamRaiserProgressWidgetController
+09:11:15.773 (773510065)|CONSTRUCTOR_ENTRY|[1]|01po0000003noZB|<init>()
+09:11:15.773 (773589170)|CONSTRUCTOR_EXIT|[1]|01po0000003noZB|<init>()
+09:11:15.773 (773957553)|METHOD_ENTRY|[3]|01po0000003noZB|TeamRaiserProgressWidgetController.getMonthsToDisplay(Date)
+09:11:15.774 (774275321)|METHOD_ENTRY|[87]|01po0000003noZB|TeamRaiserProgressWidgetController.getFormattedDate(Date)
+09:11:15.908 (908641062)|METHOD_ENTRY|[1]|01po0000000dllI|Utils.Utils()
+09:11:15.910 (910318853)|METHOD_EXIT|[1]|Utils
+09:11:15.910 (910400078)|METHOD_ENTRY|[96]|01po0000000dllI|Utils.getMonthStr(Integer)
+09:11:15.910 (910458473)|METHOD_EXIT|[96]|01po0000000dllI|Utils.getMonthStr(Integer)
+09:11:15.910 (910644321)|METHOD_EXIT|[87]|01po0000003noZB|TeamRaiserProgressWidgetController.getFormattedDate(Date)
+09:11:15.910 (910818052)|METHOD_ENTRY|[87]|01po0000003noZB|TeamRaiserProgressWidgetController.getFormattedDate(Date)
+09:11:15.910 (910880107)|METHOD_ENTRY|[96]|01po0000000dllI|Utils.getMonthStr(Integer)
+09:11:15.910 (910918768)|METHOD_EXIT|[96]|01po0000000dllI|Utils.getMonthStr(Integer)
+09:11:15.911 (911028347)|METHOD_EXIT|[87]|01po0000003noZB|TeamRaiserProgressWidgetController.getFormattedDate(Date)
+09:11:15.911 (911158577)|METHOD_ENTRY|[87]|01po0000003noZB|TeamRaiserProgressWidgetController.getFormattedDate(Date)
+09:11:15.911 (911215058)|METHOD_ENTRY|[96]|01po0000000dllI|Utils.getMonthStr(Integer)
+09:11:15.911 (911253006)|METHOD_EXIT|[96]|01po0000000dllI|Utils.getMonthStr(Integer)
+09:11:15.911 (911358302)|METHOD_EXIT|[87]|01po0000003noZB|TeamRaiserProgressWidgetController.getFormattedDate(Date)
+09:11:15.911 (911482808)|METHOD_ENTRY|[87]|01po0000003noZB|TeamRaiserProgressWidgetController.getFormattedDate(Date)
+09:11:15.911 (911538016)|METHOD_ENTRY|[96]|01po0000000dllI|Utils.getMonthStr(Integer)
+09:11:15.911 (911575360)|METHOD_EXIT|[96]|01po0000000dllI|Utils.getMonthStr(Integer)
+09:11:15.911 (911679080)|METHOD_EXIT|[87]|01po0000003noZB|TeamRaiserProgressWidgetController.getFormattedDate(Date)
+09:11:15.911 (911809233)|METHOD_ENTRY|[87]|01po0000003noZB|TeamRaiserProgressWidgetController.getFormattedDate(Date)
+09:11:15.911 (911865671)|METHOD_ENTRY|[96]|01po0000000dllI|Utils.getMonthStr(Integer)
+09:11:15.911 (911903239)|METHOD_EXIT|[96]|01po0000000dllI|Utils.getMonthStr(Integer)
+09:11:15.912 (912004938)|METHOD_EXIT|[87]|01po0000003noZB|TeamRaiserProgressWidgetController.getFormattedDate(Date)
+09:11:15.912 (912195869)|METHOD_ENTRY|[89]|01po0000003noZB|TeamRaiserProgressWidgetController.getFormattedDate(Date)
+09:11:15.912 (912254750)|METHOD_ENTRY|[96]|01po0000000dllI|Utils.getMonthStr(Integer)
+09:11:15.912 (912283568)|METHOD_EXIT|[96]|01po0000000dllI|Utils.getMonthStr(Integer)
+09:11:15.912 (912386484)|METHOD_EXIT|[89]|01po0000003noZB|TeamRaiserProgressWidgetController.getFormattedDate(Date)
+09:11:15.912 (912449808)|METHOD_EXIT|[3]|01po0000003noZB|TeamRaiserProgressWidgetController.getMonthsToDisplay(Date)
+09:11:15.912 (912575568)|USER_DEBUG|[3]|DEBUG|(August 2014, September 2014, October 2014, November 2014, December 2014, January 2015)
+09:11:16.566 (912668431)|CUMULATIVE_LIMIT_USAGE
+09:11:16.566|LIMIT_USAGE_FOR_NS|(default)|
+  Number of SOQL queries: 0 out of 100
+  Number of query rows: 0 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 0 out of 150
+  Number of DML rows: 0 out of 10000
+  Maximum CPU time: 0 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+09:11:16.566|CUMULATIVE_LIMIT_USAGE_END
+
+09:11:15.912 (912716389)|CODE_UNIT_FINISHED|execute_anonymous_apex
+09:11:15.914 (914328161)|EXECUTION_FINISHED

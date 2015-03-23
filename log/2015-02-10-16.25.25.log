@@ -1,0 +1,120 @@
+getAllFieldsForSObject.cls
+
+================================
+
+//for the Account object, you can replact that with any object you have, standard or custom
+Schema.DescribeSObjectResult a_desc = Pledge__c.sObjectType.getDescribe(); 
+Map<String, Schema.SObjectField> a_fields = a_desc.fields.getMap();
+
+for(Schema.sObjectField fld:a_fields.values()){ 
+     System.debug(fld);
+}
+
+
+================================
+
+31.0 APEX_CODE,DEBUG;APEX_PROFILING,DEBUG;CALLOUT,INFO;DB,INFO;VALIDATION,INFO;WORKFLOW,INFO
+Execute Anonymous: //for the Account object, you can replact that with any object you have, standard or custom
+Execute Anonymous: Schema.DescribeSObjectResult a_desc = Pledge__c.sObjectType.getDescribe(); 
+Execute Anonymous: Map<String, Schema.SObjectField> a_fields = a_desc.fields.getMap();
+Execute Anonymous: 
+Execute Anonymous: for(Schema.sObjectField fld:a_fields.values()){ 
+Execute Anonymous:      System.debug(fld);
+Execute Anonymous: }
+14:25:25.024 (24484093)|EXECUTION_STARTED
+14:25:25.024 (24495551)|CODE_UNIT_STARTED|[EXTERNAL]|execute_anonymous_apex
+14:25:25.031 (31115227)|USER_DEBUG|[6]|DEBUG|Next_Payment_Amount__c
+14:25:25.031 (31186587)|USER_DEBUG|[6]|DEBUG|Account__c
+14:25:25.031 (31240293)|USER_DEBUG|[6]|DEBUG|Convio_Revision__c
+14:25:25.031 (31298072)|USER_DEBUG|[6]|DEBUG|Parent_Donation__c
+14:25:25.031 (31348625)|USER_DEBUG|[6]|DEBUG|Convio_ID__c
+14:25:25.031 (31397807)|USER_DEBUG|[6]|DEBUG|last_payment_date__c
+14:25:25.031 (31447059)|USER_DEBUG|[6]|DEBUG|Number_of_Payments__c
+14:25:25.031 (31495523)|USER_DEBUG|[6]|DEBUG|RecurrenceType__c
+14:25:25.031 (31545428)|USER_DEBUG|[6]|DEBUG|CreatedById
+14:25:25.031 (31605984)|USER_DEBUG|[6]|DEBUG|LastActivityDate
+14:25:25.031 (31658336)|USER_DEBUG|[6]|DEBUG|RecurrenceWeekOfMonthMask__c
+14:25:25.031 (31707211)|USER_DEBUG|[6]|DEBUG|Seed_Transaction_Id__c
+14:25:25.031 (31754858)|USER_DEBUG|[6]|DEBUG|Benefit_Value__c
+14:25:25.031 (31822557)|USER_DEBUG|[6]|DEBUG|Next_Payment_Date__c
+14:25:25.031 (31882570)|USER_DEBUG|[6]|DEBUG|IsDeleted
+14:25:25.031 (31944607)|USER_DEBUG|[6]|DEBUG|Primary_Engagement_Channel__c
+14:25:25.031 (31995384)|USER_DEBUG|[6]|DEBUG|SystemModstamp
+14:25:25.032 (32053248)|USER_DEBUG|[6]|DEBUG|Batch_Entry__c
+14:25:25.032 (32104401)|USER_DEBUG|[6]|DEBUG|Previous_Pledge_Amount_Precise__c
+14:25:25.032 (32152428)|USER_DEBUG|[6]|DEBUG|ExternalID__c
+14:25:25.032 (32200647)|USER_DEBUG|[6]|DEBUG|Last_Payment_Status__c
+14:25:25.032 (32248326)|USER_DEBUG|[6]|DEBUG|Original_Pledge_Amount__c
+14:25:25.032 (32296738)|USER_DEBUG|[6]|DEBUG|CreatedDate
+14:25:25.032 (32344267)|USER_DEBUG|[6]|DEBUG|OwnerId
+14:25:25.032 (32392423)|USER_DEBUG|[6]|DEBUG|Honor_Memorial_Notification_Date__c
+14:25:25.032 (32440303)|USER_DEBUG|[6]|DEBUG|Transaction_Type__c
+14:25:25.032 (32487551)|USER_DEBUG|[6]|DEBUG|Write_In_Designation__c
+14:25:25.032 (32534834)|USER_DEBUG|[6]|DEBUG|Type__c
+14:25:25.032 (32582619)|USER_DEBUG|[6]|DEBUG|LastViewedDate
+14:25:25.032 (32631463)|USER_DEBUG|[6]|DEBUG|RecurrenceInterval__c
+14:25:25.032 (32679502)|USER_DEBUG|[6]|DEBUG|Previous_Next_Payment_Date__c
+14:25:25.032 (32727157)|USER_DEBUG|[6]|DEBUG|Honor_Memorial_Notification_Method__c
+14:25:25.032 (32774773)|USER_DEBUG|[6]|DEBUG|Payments_Outstanding__c
+14:25:25.032 (32826858)|USER_DEBUG|[6]|DEBUG|Payment_Processing_Enabled__c
+14:25:25.032 (32875562)|USER_DEBUG|[6]|DEBUG|LastModifiedById
+14:25:25.032 (32923826)|USER_DEBUG|[6]|DEBUG|Honor_Memorial_Honoree_Name__c
+14:25:25.032 (32971473)|USER_DEBUG|[6]|DEBUG|Payment_Type__c
+14:25:25.033 (33019083)|USER_DEBUG|[6]|DEBUG|Reversed__c
+14:25:25.033 (33067945)|USER_DEBUG|[6]|DEBUG|RecurrenceMonthOfYear__c
+14:25:25.033 (33115862)|USER_DEBUG|[6]|DEBUG|Posted__c
+14:25:25.033 (33175444)|USER_DEBUG|[6]|DEBUG|Original_Pledge_Amount_Precise__c
+14:25:25.033 (33225197)|USER_DEBUG|[6]|DEBUG|Start_Date__c
+14:25:25.033 (33282305)|USER_DEBUG|[6]|DEBUG|Campaign__c
+14:25:25.033 (33332878)|USER_DEBUG|[6]|DEBUG|Honor_Memorial_Type__c
+14:25:25.033 (33381398)|USER_DEBUG|[6]|DEBUG|LastModifiedDate
+14:25:25.033 (33429432)|USER_DEBUG|[6]|DEBUG|Id
+14:25:25.033 (33477516)|USER_DEBUG|[6]|DEBUG|Credit_Card_Type__c
+14:25:25.033 (33533795)|USER_DEBUG|[6]|DEBUG|Batch__c
+14:25:25.033 (33583968)|USER_DEBUG|[6]|DEBUG|LastReferencedDate
+14:25:25.033 (33646180)|USER_DEBUG|[6]|DEBUG|Payments_Received__c
+14:25:25.033 (33695646)|USER_DEBUG|[6]|DEBUG|RecurrenceDayOfMonth__c
+14:25:25.033 (33743722)|USER_DEBUG|[6]|DEBUG|Delayed_Self_Pledge__c
+14:25:25.033 (33791602)|USER_DEBUG|[6]|DEBUG|Amount_Outstanding__c
+14:25:25.033 (33843826)|USER_DEBUG|[6]|DEBUG|Name
+14:25:25.033 (33893051)|USER_DEBUG|[6]|DEBUG|Pledge_ID__c
+14:25:25.033 (33950693)|USER_DEBUG|[6]|DEBUG|Tribute__c
+14:25:25.034 (34000547)|USER_DEBUG|[6]|DEBUG|Amount_Received__c
+14:25:25.034 (34057168)|USER_DEBUG|[6]|DEBUG|Contact__c
+14:25:25.034 (34107060)|USER_DEBUG|[6]|DEBUG|Last_Payment_Amount__c
+14:25:25.034 (34165213)|USER_DEBUG|[6]|DEBUG|Credit_Card_Type_del__c
+14:25:25.034 (34215724)|USER_DEBUG|[6]|DEBUG|Revision__c
+14:25:25.034 (34263693)|USER_DEBUG|[6]|DEBUG|Pledge_Amount__c
+14:25:25.034 (34311345)|USER_DEBUG|[6]|DEBUG|Honor_Memorial_Notification_Email_Txt__c
+14:25:25.034 (34359061)|USER_DEBUG|[6]|DEBUG|RecurrenceDayOfWeekMask__c
+14:25:25.034 (34406905)|USER_DEBUG|[6]|DEBUG|RecurrenceDaysOfWeekMask__c
+14:25:25.034 (34454303)|USER_DEBUG|[6]|DEBUG|Pledge_Status__c
+14:25:25.034 (34502358)|USER_DEBUG|[6]|DEBUG|Honor_Memorial_Person_to_Notify__c
+14:25:25.034 (34549612)|USER_DEBUG|[6]|DEBUG|eCRM_Gift_Origin__c
+14:25:25.034 (34596574)|USER_DEBUG|[6]|DEBUG|Posted_Date__c
+14:25:25.034 (34644202)|USER_DEBUG|[6]|DEBUG|Honor_Memorial_Message__c
+14:25:25.034 (34691632)|USER_DEBUG|[6]|DEBUG|Do_Not_Assign_Default_Designation__c
+14:25:25.034 (34739880)|USER_DEBUG|[6]|DEBUG|Amount_Variance_from_Plan__c
+14:25:25.034 (34787928)|USER_DEBUG|[6]|DEBUG|Description__c
+14:25:25.034 (34839884)|USER_DEBUG|[6]|DEBUG|Honor_Memorial_Notification_Address__c
+14:25:25.034 (34887969)|USER_DEBUG|[6]|DEBUG|Pledge_Amount_Precise__c
+14:25:25.034 (34935904)|USER_DEBUG|[6]|DEBUG|Tax_Deductible_Amount__c
+14:25:25.462 (34989478)|CUMULATIVE_LIMIT_USAGE
+14:25:25.462|LIMIT_USAGE_FOR_NS|(default)|
+  Number of SOQL queries: 0 out of 100
+  Number of query rows: 0 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 0 out of 150
+  Number of DML rows: 0 out of 10000
+  Maximum CPU time: 0 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+14:25:25.462|CUMULATIVE_LIMIT_USAGE_END
+
+14:25:25.035 (35035068)|CODE_UNIT_FINISHED|execute_anonymous_apex
+14:25:25.036 (36986376)|EXECUTION_FINISHED

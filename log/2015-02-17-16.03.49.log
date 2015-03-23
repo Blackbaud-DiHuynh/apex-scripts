@@ -1,0 +1,293 @@
+Execute Anonymous
+
+================================
+
+String pledgeHTML = '<label for="searchOwner_sidebar">Limit to items I own </label>'
++'<label for="Name"><span class="requiredMark">*</span>Pledge Name</label>'
++'<label for="00Nj0000002D7T1"><span class="requiredMark">*</span>Donation Type</label>'
++'<label for="CF00Nj0000002D7SJ"><span class="requiredMark">*</span>Account</label>'
++'<label for="00Nj0000002D7Sz">Transaction Type</label>'
++'<label for="00Nj0000002D7Sx"><span class="requiredMark">*</span>Start Date</label>'
++'<label for="00Nj0000002D7Sd">Original Pledge Amount</label>'
++'<label for="00Nj0000002D7Sl">Pledge Status</label>'
++'<label for="CF00Nj0000002D7T0">Tribute</label>'
++'<label for="00Nj0000002D7Si"><span class="requiredMark">*</span>Pledge Amount</label>'
++'<label for="CF00Nj0000002D7Sf">Parent Donation</label>'
++'<label for="00Nj0000002D7SM">Benefit Value</label>'
++'<label for="00Nj0000002D7Sn">Posted</label>'
++'<label for="00Nj0000002D7Sc"><span class="requiredMark">*</span>Number of Payments</label>'
++'<label for="00Nj0000002D7Sm">Posted Date</label>'
++'<label for="CF00Nj0000002D7SN"><span class="requiredMark">*</span>Campaign ID</label>'
++'<label for="00Nj0000002D7Sw">Reversed</label>'
++'<label for="CF00Nj0000002D7So">Primary Classification</label>'
++'<label for="00Nj0000002D7SQ">Description</label>'
++'<label for="00Nj0000002D7Xv">Payment Type</label>'
++'<label for="00Nj0000002D7Xo">Credit Card Type</label>'
++'<label for="00Nj0000002D7Xz">Last Payment Date</label>'
++'<label for="00Nj0000002D7Xr">Last Payment Amount</label>'
++'<label for="00Nj0000002D7Sb">Convio Luminate Online Next Payment Date</label>'
++'<label for="00Nj0000002D7Xt">Next Payment Amount</label>'
++'<label for="00Nj0000002D7Xs">Last Payment Status</label>'
++'<label for="00Nj0000002D7T3">Convio Luminate Online Gift Origin</label>'
++'<label for="00Nj0000002D7Sh">Payments Received</label>'
++'<label for="00Nj0000002D7SL">Amount Received</label>'
++'<label for="00Nj0000002D7T2">Write-In Designation</label>'
++'<label for="CF00Nj0000002D7SO"><span class="requiredMark">*</span>Donor</label>'
++'<label for="00Nj0000002D7Sa">Honor/Memorial Type</label>'
++'<label for="00Nj0000002D7ST">Honoree Name</label>'
++'<label for="00Nj0000002D7SY">Honor/Memorial Notification Method</label>'
++'<label for="00Nj0000002D7SZ">Honor/Memorial Person(s) to Notify</label>'
++'<label for="00Nj0000002D7SV">Honor/Memorial Notification Address</label>'
++'<label for="00Nj0000002D7SX">Honor/Memorial Notification Email</label>'
++'<label for="00Nj0000002D7SW">Honor/Memorial Notification Date</label>'
++'<label for="00Nj0000002D7SU">Honor/Memorial Message</label>';
+
+
+UrlBuilder url = new UrlBuilder();
+
+url.buildLabelToFieldMap(pledgeHTML);
+url.fieldMap = Pledge__c.SObjectType.getDescribe().fields.getMap();
+String recordId = '003o000000BWJMb';
+
+Contact con = [SELECT Id, Name, AccountId, Primary_Engagement_Channel__c, 
+								Primary_Engagement_Channel__r.Name 
+							FROM Contact 
+							WHERE Id = :recordId];
+Account account = [SELECT Id, Name FROM Account WHERE Id=:con.AccountId];
+
+PageReference ans = url.name('[Set by workflow rule]')
+	.startDate(Date.today())
+	.pledgeStatus('Active')
+	.returnUrl(recordId)
+	.accountId(con.AccountId)
+	.accountName(account.Name)
+	.contactID(con.id)
+	.contactName(con.Name)
+	.sustainingGiftDonationType(Label.Individual_Gift)
+	.primaryEngagementId(con.Primary_Engagement_Channel__c)
+	.primaryEngagementName(con.Primary_Engagement_Channel__r.Name)
+	.build();
+
+System.debug('URL is ' + ans.getUrl());
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+================================
+
+31.0 APEX_CODE,DEBUG;APEX_PROFILING,DEBUG;CALLOUT,INFO;DB,INFO;VALIDATION,INFO;WORKFLOW,INFO
+Execute Anonymous: String pledgeHTML = '<label for="searchOwner_sidebar">Limit to items I own </label>'
+Execute Anonymous: +'<label for="Name"><span class="requiredMark">*</span>Pledge Name</label>'
+Execute Anonymous: +'<label for="00Nj0000002D7T1"><span class="requiredMark">*</span>Donation Type</label>'
+Execute Anonymous: +'<label for="CF00Nj0000002D7SJ"><span class="requiredMark">*</span>Account</label>'
+Execute Anonymous: +'<label for="00Nj0000002D7Sz">Transaction Type</label>'
+Execute Anonymous: +'<label for="00Nj0000002D7Sx"><span class="requiredMark">*</span>Start Date</label>'
+Execute Anonymous: +'<label for="00Nj0000002D7Sd">Original Pledge Amount</label>'
+Execute Anonymous: +'<label for="00Nj0000002D7Sl">Pledge Status</label>'
+Execute Anonymous: +'<label for="CF00Nj0000002D7T0">Tribute</label>'
+Execute Anonymous: +'<label for="00Nj0000002D7Si"><span class="requiredMark">*</span>Pledge Amount</label>'
+Execute Anonymous: +'<label for="CF00Nj0000002D7Sf">Parent Donation</label>'
+Execute Anonymous: +'<label for="00Nj0000002D7SM">Benefit Value</label>'
+Execute Anonymous: +'<label for="00Nj0000002D7Sn">Posted</label>'
+Execute Anonymous: +'<label for="00Nj0000002D7Sc"><span class="requiredMark">*</span>Number of Payments</label>'
+Execute Anonymous: +'<label for="00Nj0000002D7Sm">Posted Date</label>'
+Execute Anonymous: +'<label for="CF00Nj0000002D7SN"><span class="requiredMark">*</span>Campaign ID</label>'
+Execute Anonymous: +'<label for="00Nj0000002D7Sw">Reversed</label>'
+Execute Anonymous: +'<label for="CF00Nj0000002D7So">Primary Classification</label>'
+Execute Anonymous: +'<label for="00Nj0000002D7SQ">Description</label>'
+Execute Anonymous: +'<label for="00Nj0000002D7Xv">Payment Type</label>'
+Execute Anonymous: +'<label for="00Nj0000002D7Xo">Credit Card Type</label>'
+Execute Anonymous: +'<label for="00Nj0000002D7Xz">Last Payment Date</label>'
+Execute Anonymous: +'<label for="00Nj0000002D7Xr">Last Payment Amount</label>'
+Execute Anonymous: +'<label for="00Nj0000002D7Sb">Convio Luminate Online Next Payment Date</label>'
+Execute Anonymous: +'<label for="00Nj0000002D7Xt">Next Payment Amount</label>'
+Execute Anonymous: +'<label for="00Nj0000002D7Xs">Last Payment Status</label>'
+Execute Anonymous: +'<label for="00Nj0000002D7T3">Convio Luminate Online Gift Origin</label>'
+Execute Anonymous: +'<label for="00Nj0000002D7Sh">Payments Received</label>'
+Execute Anonymous: +'<label for="00Nj0000002D7SL">Amount Received</label>'
+Execute Anonymous: +'<label for="00Nj0000002D7T2">Write-In Designation</label>'
+Execute Anonymous: +'<label for="CF00Nj0000002D7SO"><span class="requiredMark">*</span>Donor</label>'
+Execute Anonymous: +'<label for="00Nj0000002D7Sa">Honor/Memorial Type</label>'
+Execute Anonymous: +'<label for="00Nj0000002D7ST">Honoree Name</label>'
+Execute Anonymous: +'<label for="00Nj0000002D7SY">Honor/Memorial Notification Method</label>'
+Execute Anonymous: +'<label for="00Nj0000002D7SZ">Honor/Memorial Person(s) to Notify</label>'
+Execute Anonymous: +'<label for="00Nj0000002D7SV">Honor/Memorial Notification Address</label>'
+Execute Anonymous: +'<label for="00Nj0000002D7SX">Honor/Memorial Notification Email</label>'
+Execute Anonymous: +'<label for="00Nj0000002D7SW">Honor/Memorial Notification Date</label>'
+Execute Anonymous: +'<label for="00Nj0000002D7SU">Honor/Memorial Message</label>';
+Execute Anonymous: 
+Execute Anonymous: 
+Execute Anonymous: UrlBuilder url = new UrlBuilder();
+Execute Anonymous: 
+Execute Anonymous: url.buildLabelToFieldMap(pledgeHTML);
+Execute Anonymous: url.fieldMap = Pledge__c.SObjectType.getDescribe().fields.getMap();
+Execute Anonymous: String recordId = '003o000000BWJMb';
+Execute Anonymous: 
+Execute Anonymous: Contact con = [SELECT Id, Name, AccountId, Primary_Engagement_Channel__c, 
+Execute Anonymous: 								Primary_Engagement_Channel__r.Name 
+Execute Anonymous: 							FROM Contact 
+Execute Anonymous: 							WHERE Id = :recordId];
+Execute Anonymous: Account account = [SELECT Id, Name FROM Account WHERE Id=:con.AccountId];
+Execute Anonymous: 
+Execute Anonymous: PageReference ans = url.name('[Set by workflow rule]')
+Execute Anonymous: 	.startDate(Date.today())
+Execute Anonymous: 	.pledgeStatus('Active')
+Execute Anonymous: 	.returnUrl(recordId)
+Execute Anonymous: 	.accountId(con.AccountId)
+Execute Anonymous: 	.accountName(account.Name)
+Execute Anonymous: 	.contactID(con.id)
+Execute Anonymous: 	.contactName(con.Name)
+Execute Anonymous: 	.sustainingGiftDonationType(Label.Individual_Gift)
+Execute Anonymous: 	.primaryEngagementId(con.Primary_Engagement_Channel__c)
+Execute Anonymous: 	.primaryEngagementName(con.Primary_Engagement_Channel__r.Name)
+Execute Anonymous: 	.build();
+Execute Anonymous: 
+Execute Anonymous: System.debug('URL is ' + ans.getUrl());
+Execute Anonymous: 
+Execute Anonymous: 
+Execute Anonymous: 
+Execute Anonymous: 
+Execute Anonymous: 
+Execute Anonymous: 
+Execute Anonymous: 
+Execute Anonymous: 
+Execute Anonymous: 
+Execute Anonymous: 
+Execute Anonymous: 
+Execute Anonymous: 
+Execute Anonymous: 
+Execute Anonymous: 
+Execute Anonymous: 
+Execute Anonymous: 
+Execute Anonymous: 
+Execute Anonymous: 
+Execute Anonymous: 
+Execute Anonymous: 
+Execute Anonymous: 
+Execute Anonymous: 
+Execute Anonymous: 
+14:03:48.868 (868960107)|EXECUTION_STARTED
+14:03:48.868 (868969193)|CODE_UNIT_STARTED|[EXTERNAL]|execute_anonymous_apex
+14:03:48.877 (877453811)|METHOD_ENTRY|[1]|01po0000003RBmT|UrlBuilder.UrlBuilder()
+14:03:48.877 (877472651)|METHOD_EXIT|[1]|UrlBuilder
+14:03:48.877 (877640654)|CONSTRUCTOR_ENTRY|[42]|01po0000003RBmT|<init>()
+14:03:48.877 (877758607)|CONSTRUCTOR_EXIT|[42]|01po0000003RBmT|<init>()
+14:03:48.877 (877849925)|METHOD_ENTRY|[44]|01po0000003RBmT|UrlBuilder.buildLabelToFieldMap(String)
+14:03:48.880 (880996937)|METHOD_EXIT|[44]|01po0000003RBmT|UrlBuilder.buildLabelToFieldMap(String)
+14:03:48.882 (882825946)|SOQL_EXECUTE_BEGIN|[48]|Aggregations:0|SELECT Id, Name, AccountId, Primary_Engagement_Channel__c, Primary_Engagement_Channel__r.Name FROM Contact WHERE Id = :tmpVar1
+14:03:48.890 (890589780)|SOQL_EXECUTE_END|[48]|Rows:1
+14:03:48.891 (891017594)|SOQL_EXECUTE_BEGIN|[52]|Aggregations:0|SELECT Id, Name FROM Account WHERE Id = :tmpVar1
+14:03:48.896 (896428556)|SOQL_EXECUTE_END|[52]|Rows:1
+14:03:48.896 (896624186)|METHOD_ENTRY|[54]|01po0000003RBmT|UrlBuilder.name(String)
+14:03:48.896 (896666093)|METHOD_ENTRY|[235]|01po0000003RBmT|UrlBuilder.addUrlArgument(String, String)
+14:03:48.896 (896916790)|METHOD_EXIT|[235]|01po0000003RBmT|UrlBuilder.addUrlArgument(String, String)
+14:03:48.896 (896925104)|METHOD_EXIT|[54]|01po0000003RBmT|UrlBuilder.name(String)
+14:03:48.897 (897016868)|METHOD_ENTRY|[54]|01po0000003RBmT|UrlBuilder.startDate(Date)
+14:03:48.897 (897038218)|METHOD_ENTRY|[250]|01po0000003RBmT|UrlBuilder.getFieldId(String)
+14:03:48.897 (897798747)|METHOD_EXIT|[250]|01po0000003RBmT|UrlBuilder.getFieldId(String)
+14:03:48.932 (932144510)|METHOD_ENTRY|[1]|01po0000000dllI|Utils.Utils()
+14:03:48.937 (937666932)|METHOD_EXIT|[1]|Utils
+14:03:48.937 (937705451)|METHOD_ENTRY|[250]|01po0000000dllI|Utils.toLocaleDate(Date)
+14:03:48.937 (937896777)|METHOD_EXIT|[250]|01po0000000dllI|Utils.toLocaleDate(Date)
+14:03:48.937 (937914852)|METHOD_ENTRY|[250]|01po0000003RBmT|UrlBuilder.addUrlArgument(String, String)
+14:03:48.938 (938005064)|METHOD_EXIT|[250]|01po0000003RBmT|UrlBuilder.addUrlArgument(String, String)
+14:03:48.938 (938015547)|METHOD_EXIT|[54]|01po0000003RBmT|UrlBuilder.startDate(Date)
+14:03:48.938 (938119316)|METHOD_ENTRY|[54]|01po0000003RBmT|UrlBuilder.pledgeStatus(String)
+14:03:48.938 (938145246)|METHOD_ENTRY|[210]|01po0000003RBmT|UrlBuilder.getFieldId(String)
+14:03:48.938 (938525279)|METHOD_EXIT|[210]|01po0000003RBmT|UrlBuilder.getFieldId(String)
+14:03:48.938 (938536560)|METHOD_ENTRY|[210]|01po0000003RBmT|UrlBuilder.addUrlArgument(String, String)
+14:03:48.938 (938606960)|METHOD_EXIT|[210]|01po0000003RBmT|UrlBuilder.addUrlArgument(String, String)
+14:03:48.938 (938619316)|METHOD_EXIT|[54]|01po0000003RBmT|UrlBuilder.pledgeStatus(String)
+14:03:48.938 (938701572)|METHOD_ENTRY|[54]|01po0000003RBmT|UrlBuilder.returnURL(Id)
+14:03:48.938 (938772571)|METHOD_ENTRY|[104]|01po0000003RBmT|UrlBuilder.addUrlArgument(String, String)
+14:03:48.938 (938824422)|METHOD_EXIT|[104]|01po0000003RBmT|UrlBuilder.addUrlArgument(String, String)
+14:03:48.938 (938868438)|METHOD_ENTRY|[105]|01po0000003RBmT|UrlBuilder.addUrlArgument(String, String)
+14:03:48.938 (938938191)|METHOD_EXIT|[105]|01po0000003RBmT|UrlBuilder.addUrlArgument(String, String)
+14:03:48.938 (938945642)|METHOD_EXIT|[54]|01po0000003RBmT|UrlBuilder.returnURL(Id)
+14:03:48.939 (939018009)|METHOD_ENTRY|[54]|01po0000003RBmT|UrlBuilder.accountId(Id)
+14:03:48.939 (939050683)|METHOD_ENTRY|[110]|01po0000003RBmT|UrlBuilder.addUrlArgument(String, String)
+14:03:48.939 (939138760)|METHOD_EXIT|[110]|01po0000003RBmT|UrlBuilder.addUrlArgument(String, String)
+14:03:48.939 (939149832)|METHOD_EXIT|[54]|01po0000003RBmT|UrlBuilder.accountId(Id)
+14:03:48.939 (939244805)|METHOD_ENTRY|[54]|01po0000003RBmT|UrlBuilder.accountName(String)
+14:03:48.939 (939269840)|METHOD_ENTRY|[115]|01po0000003RBmT|UrlBuilder.getFieldId(String)
+14:03:48.939 (939477998)|METHOD_EXIT|[115]|01po0000003RBmT|UrlBuilder.getFieldId(String)
+14:03:48.939 (939488721)|METHOD_ENTRY|[115]|01po0000003RBmT|UrlBuilder.addUrlArgument(String, String)
+14:03:48.939 (939537142)|METHOD_EXIT|[115]|01po0000003RBmT|UrlBuilder.addUrlArgument(String, String)
+14:03:48.939 (939544183)|METHOD_EXIT|[54]|01po0000003RBmT|UrlBuilder.accountName(String)
+14:03:48.939 (939634285)|METHOD_ENTRY|[54]|01po0000003RBmT|UrlBuilder.contactID(Id)
+14:03:48.939 (939651696)|METHOD_ENTRY|[145]|01po0000003RBmT|UrlBuilder.getFieldId(String)
+14:03:48.939 (939888200)|METHOD_EXIT|[145]|01po0000003RBmT|UrlBuilder.getFieldId(String)
+14:03:48.939 (939900937)|METHOD_ENTRY|[145]|01po0000003RBmT|UrlBuilder.lookupId()
+14:03:48.939 (939912652)|METHOD_EXIT|[145]|01po0000003RBmT|UrlBuilder.lookupId()
+14:03:48.939 (939926077)|METHOD_ENTRY|[145]|01po0000003RBmT|UrlBuilder.addUrlArgument(String, String)
+14:03:48.939 (939991322)|METHOD_EXIT|[145]|01po0000003RBmT|UrlBuilder.addUrlArgument(String, String)
+14:03:48.940 (940007881)|METHOD_EXIT|[54]|01po0000003RBmT|UrlBuilder.contactID(Id)
+14:03:48.940 (940088657)|METHOD_ENTRY|[54]|01po0000003RBmT|UrlBuilder.contactName(String)
+14:03:48.940 (940109164)|METHOD_ENTRY|[140]|01po0000003RBmT|UrlBuilder.getFieldId(String)
+14:03:48.940 (940198463)|METHOD_EXIT|[140]|01po0000003RBmT|UrlBuilder.getFieldId(String)
+14:03:48.940 (940207548)|METHOD_ENTRY|[140]|01po0000003RBmT|UrlBuilder.addUrlArgument(String, String)
+14:03:48.940 (940255130)|METHOD_EXIT|[140]|01po0000003RBmT|UrlBuilder.addUrlArgument(String, String)
+14:03:48.940 (940261729)|METHOD_EXIT|[54]|01po0000003RBmT|UrlBuilder.contactName(String)
+14:03:48.940 (940348582)|METHOD_ENTRY|[54]|01po0000003RBmT|UrlBuilder.sustainingGiftDonationType(String)
+14:03:48.940 (940364808)|METHOD_ENTRY|[220]|01po0000003RBmT|UrlBuilder.getFieldId(String)
+14:03:48.940 (940515434)|METHOD_EXIT|[220]|01po0000003RBmT|UrlBuilder.getFieldId(String)
+14:03:48.940 (940525318)|METHOD_ENTRY|[220]|01po0000003RBmT|UrlBuilder.addUrlArgument(String, String)
+14:03:48.940 (940572309)|METHOD_EXIT|[220]|01po0000003RBmT|UrlBuilder.addUrlArgument(String, String)
+14:03:48.940 (940578964)|METHOD_EXIT|[54]|01po0000003RBmT|UrlBuilder.sustainingGiftDonationType(String)
+14:03:48.940 (940650060)|METHOD_ENTRY|[54]|01po0000003RBmT|UrlBuilder.primaryEngagementId(Id)
+14:03:48.940 (940668663)|METHOD_ENTRY|[190]|01po0000003RBmT|UrlBuilder.getFieldId(String)
+14:03:48.940 (940853747)|METHOD_EXIT|[190]|01po0000003RBmT|UrlBuilder.getFieldId(String)
+14:03:48.940 (940861845)|METHOD_ENTRY|[190]|01po0000003RBmT|UrlBuilder.lookupId()
+14:03:48.940 (940869844)|METHOD_EXIT|[190]|01po0000003RBmT|UrlBuilder.lookupId()
+14:03:48.940 (940882774)|METHOD_ENTRY|[190]|01po0000003RBmT|UrlBuilder.addUrlArgument(String, String)
+14:03:48.940 (940932260)|METHOD_EXIT|[190]|01po0000003RBmT|UrlBuilder.addUrlArgument(String, String)
+14:03:48.940 (940939126)|METHOD_EXIT|[54]|01po0000003RBmT|UrlBuilder.primaryEngagementId(Id)
+14:03:48.941 (941095146)|METHOD_ENTRY|[54]|01po0000003RBmT|UrlBuilder.primaryEngagementName(String)
+14:03:48.941 (941110712)|METHOD_ENTRY|[195]|01po0000003RBmT|UrlBuilder.getFieldId(String)
+14:03:48.941 (941195936)|METHOD_EXIT|[195]|01po0000003RBmT|UrlBuilder.getFieldId(String)
+14:03:48.941 (941205340)|METHOD_ENTRY|[195]|01po0000003RBmT|UrlBuilder.addUrlArgument(String, String)
+14:03:48.941 (941252327)|METHOD_EXIT|[195]|01po0000003RBmT|UrlBuilder.addUrlArgument(String, String)
+14:03:48.941 (941258744)|METHOD_EXIT|[54]|01po0000003RBmT|UrlBuilder.primaryEngagementName(String)
+14:03:48.941 (941303289)|METHOD_ENTRY|[54]|01po0000003RBmT|UrlBuilder.build()
+14:03:48.941 (941485238)|METHOD_EXIT|[54]|01po0000003RBmT|UrlBuilder.build()
+14:03:48.941 (941591861)|USER_DEBUG|[67]|DEBUG|URL is Name=%5BSet+by+workflow+rule%5D&00Nj0000002D7Sx=2%2F17%2F2015&00Nj0000002D7Sl=Active&retURL=%2F003o000000BWJMbAAP&cancelURL=%2F003o000000BWJMbAAP&accid=001o000000BctE4AAJ&CF00Nj0000002D7SJ=Aaron+Brooks+Household&CF00Nj0000002D7SO_lkid=003o000000BWJMbAAP&CF00Nj0000002D7SO=Aaron+Brooks&00Nj0000002D7T1=Individual+Gift&CF00Nj0000002D7So_lkid=a0Eo0000003t8YUEAY&CF00Nj0000002D7So=Default+Classification
+14:03:49.887 (941646418)|CUMULATIVE_LIMIT_USAGE
+14:03:49.887|LIMIT_USAGE_FOR_NS|(default)|
+  Number of SOQL queries: 2 out of 100
+  Number of query rows: 2 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 0 out of 150
+  Number of DML rows: 0 out of 10000
+  Maximum CPU time: 0 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+14:03:49.887|CUMULATIVE_LIMIT_USAGE_END
+
+14:03:48.941 (941688298)|CODE_UNIT_FINISHED|execute_anonymous_apex
+14:03:48.943 (943805915)|EXECUTION_FINISHED
